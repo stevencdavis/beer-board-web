@@ -27,6 +27,7 @@
     "gulp-minify-html": "^1.0.5",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-nunjucks-render": "^1.0.0",
+    "gulp-protractor": "^2.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.1",
     "gulp-sass-lint": "^1.1.0",
@@ -42,6 +43,7 @@
     "karma-jspm": "^2.0.2",
     "karma-phantomjs-launcher": "^0.2.2",
     "phantomjs": "^1.9.19",
+    "protractor": "^3.0.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5"
   },
