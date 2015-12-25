@@ -17,6 +17,12 @@ global.paths = {
   // Sources folder
   //'src': './src',
 
+  // Unit test files
+  'unit_tests': 'test/**/*.test.js',
+
+  // End-to-end test files
+  'e2e_tests': 'test/**/*-spec.js',
+
   // Nunjucks sources
   'nunjucks': './src/*.nunjucks',
 
@@ -79,8 +85,10 @@ requireDir('./dev/gulp/tasks', { recurse: false });
 
 gulp.task('default', function (done) {
   runSequence(
-    'build:development',
-    ['serve',
-     'test:tdd'],
+    ['build:development', 'webdriver_update'],
+    ['webdriver_standalone',
+     'serve',
+     'unit-test:tdd',
+     'protractor'],
     done);
 });

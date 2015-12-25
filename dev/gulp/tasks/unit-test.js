@@ -7,9 +7,9 @@ var path = require('path');
 /**
  * Run test once and exit
  */
-gulp.task('test:once', function (done) {
+gulp.task('unit-test:once', function (done) {
   new Server({
-    configFile: path.resolve('karma.conf.js'),
+    configFile: path.resolve('.karma.conf.js'),
     singleRun: true
   }, done).start();
 });
@@ -17,9 +17,9 @@ gulp.task('test:once', function (done) {
 /**
  * Watch for file changes and re-run tests on each change
  */
-gulp.task('test:tdd', function (done) {
+gulp.task('unit-test:tdd', function (done) {
   new Server({
-    configFile: path.resolve('karma.conf.js'),
+    configFile: path.resolve('.karma.conf.js'),
     singleRun: false,
 
   }, done).start();
