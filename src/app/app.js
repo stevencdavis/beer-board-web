@@ -8,8 +8,12 @@ import 'angular-ui-router';
 import routes from './app.routes';
 import templatesModule from 'build/_templates';
 
+import Foo from './components/foo/foo';
 //import Foo from './foo';
 //import Dashboard from './Dashboard/dashboard';
+
+let foo = new Foo();
+console.debug(foo.doSomething());
 
 
 // define app module

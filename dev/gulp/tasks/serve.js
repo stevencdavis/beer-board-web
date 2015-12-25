@@ -10,7 +10,7 @@ var path = require('path');
 var util = require('gulp-util');
 
 
-gulp.task('serve', ['build:development'], function () {
+gulp.task('serve', function () {
 
   // serve with BrowserSync
   browserSync({

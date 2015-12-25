@@ -13,19 +13,19 @@ System.config({
     "npm:*": "assets/lib/jspm_packages/npm/*"
   },
 
-  packages: {
-    "src": {
-      "defaultExtension": "ts",
-      "meta": {
-        "*.ts": {
-          "loader": "ts"
-        },
-        "*.js": {
-          "loader": "ts"
-        }
-      }
-    }
-  },
+  //packages: {
+  //  "src": {
+  //    "defaultExtension": "ts",
+  //    "meta": {
+  //      "*.ts": {
+  //        "loader": "ts"
+  //      },
+  //      "*.js": {
+  //        "loader": "ts"
+  //      }
+  //    }
+  //  }
+  //},
 
   map: {
     "angular": "github:angular/bower-angular@1.4.8",

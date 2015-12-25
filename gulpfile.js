@@ -6,6 +6,8 @@
 
 var gulp = require('gulp');
 var requireDir = require('require-dir');
+var runSequence = require('run-sequence');
+
 
 // Specify paths & globbing patterns for tasks.
 global.paths = {
@@ -73,4 +75,12 @@ global.config = {
 requireDir('./dev/gulp/tasks', { recurse: false });
 
 // Default task; start local server & watch for changes.
-gulp.task('default', ['serve']);
+//gulp.task('default', ['serve']);
+
+gulp.task('default', function (done) {
+  runSequence(
+    'build:development',
+    ['serve',
+     'test:tdd'],
+    done);
+});
