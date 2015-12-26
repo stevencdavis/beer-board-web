@@ -15,7 +15,7 @@ gulp.task('lint:js', function () {
 
 // Lint SASS
 gulp.task('lint:scss', function () {
-  return gulp.src(global.paths.scss)
+  return gulp.src(global.paths.scss.lint)
     .pipe(cache('lint-sass'))
     .pipe(sassLint())
     .pipe(sassLint.format())

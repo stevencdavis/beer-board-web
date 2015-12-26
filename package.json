@@ -45,7 +45,8 @@
     "phantomjs": "^1.9.19",
     "protractor": "^3.0.0",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "sass-jspm-importer": "0.0.6"
   },
   "scripts": {
     "test": "karma start"
@@ -64,7 +65,8 @@
     },
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.8",
-      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15"
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "foundation-apps": "npm:foundation-apps@^1.2.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
