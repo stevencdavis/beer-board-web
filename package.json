@@ -65,6 +65,7 @@
     },
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.8",
+      "angular-animate": "github:angular/bower-angular-animate@^1.4.8",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "foundation-apps": "npm:foundation-apps@^1.2.0"
     },

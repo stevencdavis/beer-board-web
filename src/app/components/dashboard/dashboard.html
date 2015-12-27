@@ -1,9 +1,51 @@
-<h1>Hello JSPM!</h1>
+<div class="grid-frame vertical">
 
-<input type="text" ng-model="greeting">
+  <div class="primary title-bar">
+    <div class="center title"><a ui-sref="home">Iris</a></div>
+    <span class="right"><a ui-sref="settings">Settings</a></span>
+  </div>
 
-<br><br>
+  <div class="grid-block">
+    <div zf-panel="" id="testPanel">
+      <p>Panel</p>
+    </div>
+    <div class="grid-content">
+      <h1 class="main-content">Main Content</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+  </div>
 
-<i id="greeting-output">{{ greeting }}!!!</i>
+  <div class="grid-block">
 
-<br><br>
+    <div class="grid-content">
+      <h1>Hello JSPM!</h1>
+
+      <a href="#" zf-toggle="testPanel" class="button">Toggle Panel</a>
+
+      <input type="text" ng-model="greeting">
+
+      <br><br>
+
+      <i id="greeting-output">{{ greeting }}!!!</i>
+
+      <br><br>
+
+    </div>
+  </div>
+
+  <div class="grid-block">
+    <div class="grid-content">
+      <div class="dark card">
+        <img src="http://placekitten.com/g/400/200">
+        <div class="card-divider">
+          This is content
+        </div>
+        <div class="card-section">
+          <h4>The Basics: Group and Block</h4>
+          <p>The most basic elements in the Foundation for Apps grid are the Group and Block.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

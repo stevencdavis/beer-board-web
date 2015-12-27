@@ -2,23 +2,36 @@
  * Main application file
  */
 
+// angular
 import angular from 'angular';
 import 'angular-ui-router';
+import 'angular-animate';
 
+// foundation
+import 'foundation-apps/dist/js/foundation-apps';
+import 'foundation-apps/dist/js/foundation-apps-templates';
+import 'foundation-apps/js/angular/components/panel/panel';
+
+// app
 import routes from './app.routes';
 import templatesModule from 'build/_templates';
-
 import Foo from './components/foo/foo';
-//import Dashboard from './Dashboard/dashboard';
-
-//import 'foundation' from 'foundation';
 
 
 // define app module
 var app = angular.module('app', [
   'ui.router',
+  'ngAnimate',
+
+  //foundation
+  'foundation',
+  'foundation.dynamicRouting',
+  'foundation.dynamicRouting.animations',
+
+  // app
   templatesModule.name
 ]);
+
 
 // configure app
 app.config(routes);
@@ -29,16 +42,5 @@ angular.element(document).ready(function() {
 });
 
 
-
 let foo = new Foo();
 console.debug(foo.doSomething());
-
-//let dashboard = new Dashboard();
-//
-//let textNode = document.createTextNode(foo.doSomething());
-//document.body.appendChild(textNode);
-//
-//let textNode2 = document.createTextNode(dashboard.showDashboard());
-//document.body.appendChild(textNode2);
-//
-//export var hello = 'es6';
