@@ -21,7 +21,7 @@ gulp.task('compile-scss:development', function () {
       importer: sassJspm.importer
     })
       .on('error', function (e) {
-        console.log("Failed to compile SASS: ", e.message);
+        console.log("[compile-scss:development] Failed to compile SASS: ", e.message);
         this.emit('end');
       }))
     .pipe(concat('app.css'))
@@ -44,7 +44,7 @@ gulp.task('compile-scss:production', function () {
       importer: sassJspm.importer
     })
       .on('error', function (e) {
-        console.log("Failed to compile SASS: ", e.message);
+        console.log("[compile-scss:production] Failed to compile SASS: ", e.message);
         this.emit('end');
       }))
     .pipe(concat('app.css'))

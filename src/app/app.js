@@ -2,18 +2,16 @@
  * Main application file
  */
 
-import 'angular';
+import angular from 'angular';
 import 'angular-ui-router';
 
 import routes from './app.routes';
 import templatesModule from 'build/_templates';
 
 import Foo from './components/foo/foo';
-//import Foo from './foo';
 //import Dashboard from './Dashboard/dashboard';
 
-let foo = new Foo();
-console.debug(foo.doSomething());
+//import 'foundation' from 'foundation';
 
 
 // define app module
@@ -32,7 +30,9 @@ angular.element(document).ready(function() {
 
 
 
-//let foo = new Foo();
+let foo = new Foo();
+console.debug(foo.doSomething());
+
 //let dashboard = new Dashboard();
 //
 //let textNode = document.createTextNode(foo.doSomething());

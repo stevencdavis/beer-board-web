@@ -20,7 +20,7 @@ gulp.task('protractor', function(){
     }))
     .on('error', function(e) {
       //throw e
-      console.log("Error running protractor tests: ", e.message);
+      console.log("[protractor] Error running protractor tests: ", e.message);
       this.emit('end');
     });
 });

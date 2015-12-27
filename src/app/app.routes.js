@@ -3,21 +3,19 @@
  */
 
 export default /* @ngInject */ ($stateProvider, $urlRouterProvider) => {
-
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
 
     .state('dashboard', {
-      url  : '/',
+      url: '/',
       views: {
         main: {
           templateUrl: 'app/components/dashboard/dashboard.html',
-          controller : /* @ngInject */ ($scope) => {
+          controller: /* @ngInject */ ($scope) => {
             $scope.greeting = 'Ahoy';
           }
         }
       }
     });
-
 };
