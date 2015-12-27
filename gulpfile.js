@@ -48,13 +48,10 @@ global.paths = {
   ],
 
   // SASS sources
-  'scss': {
-    'lint': './src/scss/**/*.scss',
-    'compile': [
-      './src/scss/**/*.scss',
-      './src/assets/**/*.scss'
-    ]
-  },
+  'scss': [
+    './src/app/**/*.scss',
+    './src/assets/scss/**/*.scss'
+  ],
 
   //// Image sources
   //'img': './src/img/*',
@@ -75,6 +72,7 @@ global.paths = {
 global.config = {
   'bundle_entry_point': './src/app/app.js',
   'jspm_packages': './src/assets/lib/jspm_packages/',
+  'scss_main': './src/assets/scss/main.scss',
   'css_file': {
     'dev': './build/css/app.css',
     'dist': './css/app.min.css'

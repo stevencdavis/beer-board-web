@@ -16,14 +16,15 @@ gulp.task('serve', function () {
   browserSync({
     server: {
       baseDir: './src',
-      index  : 'build/index.html'//global.paths.build + '/index.html'
+      index  : 'build/index.html',
+      logConnections: true
     },
     notify: true
   });
 
   gulp.watch([global.paths.nunjucks], ['compile-nunjucks']).on('change', logChanges);
   gulp.watch([global.paths.html], ['reload:html']).on('change', logChanges);
-  gulp.watch([global.paths.scss.compile], ['lint:scss', 'compile-scss:development']).on('change', logChanges);
+  gulp.watch([global.paths.scss], ['lint:scss', 'compile-scss:development']).on('change', logChanges);
   gulp.watch([global.paths.js], ['lint:js', 'reload:js']).on('change', logChanges);
   gulp.watch([global.paths.e2e_tests], ['protractor']).on('change', logChanges);
 });

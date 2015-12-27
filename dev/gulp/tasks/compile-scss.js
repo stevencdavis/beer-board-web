@@ -11,7 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 
 gulp.task('compile-scss:development', function () {
-  return gulp.src(global.paths.scss.compile)
+  return gulp.src(global.config.scss_main)
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
@@ -35,7 +35,7 @@ gulp.task('compile-scss:development', function () {
 // Compile sass with compression, minification (in case that's different than compression...),
 // added '.min' suffix, and no browser-sync reloading
 gulp.task('compile-scss:production', function () {
-  return gulp.src(global.paths.scss.compile)
+  return gulp.src(global.config.scss_main)
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
