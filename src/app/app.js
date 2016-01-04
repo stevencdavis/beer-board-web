@@ -15,11 +15,12 @@ import 'foundation-apps/js/angular/components/panel/panel';
 // app
 import routes from './app.routes';
 import templatesModule from 'build/_templates';
+import Modernizr from 'build/modernizr-custom';
 import Foo from './components/foo/foo';
 
 
 // define app module
-var app = angular.module('app', [
+let app = angular.module('app', [
   'ui.router',
   'ngAnimate',
 
@@ -44,3 +45,5 @@ angular.element(document).ready(function() {
 
 let foo = new Foo();
 console.debug(foo.doSomething());
+
+console.debug('Modernizr:', Modernizr);
