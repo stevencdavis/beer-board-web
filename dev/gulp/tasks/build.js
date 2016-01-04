@@ -9,9 +9,9 @@ gulp.task('build:development', function (done) {
     'clean',
     'lint',
     'modernizr',
-    ['compile-scss:development',
-     'compile-nunjucks:development',
-     'compile-templates:development'],
+    ['scss:development',
+     'nunjucks:development',
+     'templates:development'],
     done);
 });
 
@@ -20,11 +20,11 @@ gulp.task('build:production', function (done) {
     'clean',
     'lint',
     'modernizr',
-    ['compile-scss:production',
-     'compile-nunjucks:production',
-     'compile-templates:production',
+    ['scss:production',
+     'nunjucks:production',
+     'templates:production',
      'bundle'],
-    'optimize-assets',
+    'optimize',
     done);
 });
 

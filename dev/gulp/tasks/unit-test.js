@@ -20,7 +20,6 @@ gulp.task('unit-test:once', function (done) {
 gulp.task('unit-test:tdd', function (done) {
   new Server({
     configFile: path.resolve('.karma.conf.js'),
-    singleRun: false,
-
+    singleRun: false
   }, done).start();
 });

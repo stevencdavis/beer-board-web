@@ -10,7 +10,7 @@ var gulpNgAnnotate = require('gulp-ng-annotate');
 var gulpUglify = require('gulp-uglify');
 
 
-gulp.task('optimize-assets', function () {
+gulp.task('optimize', function () {
 
   return gulp.src(global.paths.dist + '/**')
 

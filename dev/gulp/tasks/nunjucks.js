@@ -10,7 +10,7 @@ var options = {
   lstripBlocks: true
 };
 
-gulp.task('compile-nunjucks:development', function () {
+gulp.task('nunjucks:development', function () {
   nunjucksRender.nunjucks.configure(['./src'], options);
   return gulp.src(global.paths.nunjucks)
     .pipe(nunjucksRender({
@@ -21,7 +21,7 @@ gulp.task('compile-nunjucks:development', function () {
     .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('compile-nunjucks:production', function () {
+gulp.task('nunjucks:production', function () {
   nunjucksRender.nunjucks.configure(['./src'], options);
   return gulp.src(global.paths.nunjucks)
     .pipe(nunjucksRender({

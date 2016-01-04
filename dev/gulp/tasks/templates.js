@@ -9,7 +9,7 @@ var htmlmin = require('gulp-htmlmin');
 var fs = require('fs');
 
 
-gulp.task('compile-templates:development', function () {
+gulp.task('templates:development', function () {
   // create empty module in development
   fs.writeFileSync(
     global.paths.build + '/' + '_templates.js',
@@ -17,7 +17,7 @@ gulp.task('compile-templates:development', function () {
   );
 });
 
-gulp.task('compile-templates:production', function () {
+gulp.task('templates:production', function () {
   // scan source dir for HTML files and add them to template cache
   return gulp.src(global.paths.templates)
     .pipe(htmlmin({collapseWhitespace: true}))
