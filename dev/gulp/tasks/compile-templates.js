@@ -5,7 +5,7 @@
 var gulp = require('gulp');
 var gulpAngularTemplatecache = require('gulp-angular-templatecache');
 var gulpInsert = require('gulp-insert');
-var gulpMinifyHtml = require('gulp-minify-html');
+var htmlmin = require('gulp-htmlmin');
 var fs = require('fs');
 
 
@@ -20,7 +20,7 @@ gulp.task('compile-templates:development', function () {
 gulp.task('compile-templates:production', function () {
   // scan source dir for HTML files and add them to template cache
   return gulp.src(global.paths.templates)
-    .pipe(gulpMinifyHtml())
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulpAngularTemplatecache({
       filename: '_templates.js',
       standalone: true
