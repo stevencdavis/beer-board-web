@@ -7,7 +7,7 @@ var path = require('path');
 /**
  * Run test once and exit
  */
-gulp.task('unit-test:once', function (done) {
+gulp.task('karma:once', function (done) {
   new Server({
     configFile: path.resolve('.karma.conf.js'),
     singleRun: true
@@ -17,7 +17,7 @@ gulp.task('unit-test:once', function (done) {
 /**
  * Watch for file changes and re-run tests on each change
  */
-gulp.task('unit-test:tdd', function (done) {
+gulp.task('karma:tdd', function (done) {
   new Server({
     configFile: path.resolve('.karma.conf.js'),
     singleRun: false

@@ -1,4 +1,4 @@
-import Foo from 'src/app/components/foo/foo';
+import Foo from 'src/build/app/components/foo/foo';
 
 console.debug('FOO:', Foo);
 

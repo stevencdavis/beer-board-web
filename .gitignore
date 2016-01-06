@@ -22,3 +22,4 @@ src/jspm_packages
 dist/
 src/build/
 src/assets/lib/jspm_packages
+src/typings

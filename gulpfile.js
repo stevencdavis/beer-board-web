@@ -4,9 +4,7 @@
 
 'use strict';
 
-var gulp = require('gulp');
 var requireDir = require('require-dir');
-var runSequence = require('run-sequence');
 
 
 // Specify paths & globbing patterns for tasks.
@@ -42,8 +40,14 @@ global.paths = {
 
   // JS sources
   'js': [
-    './src/**/*.js',
-    '!./src/build/**/',
+    './src/app/**/*.js',
+    './src/config.js'
+  ],
+
+  // JS sources
+  'ts': [
+    './src/**/*.ts',
+    //'!./src/build/**/',
     '!./src/assets/lib/jspm_packages/**/'
   ],
 
@@ -70,27 +74,15 @@ global.paths = {
 };
 
 global.config = {
-  'bundle_entry_point': './src/app/app.js',
+  'bundle_entry_point': './src/build/app/app.js',
   'jspm_packages': './src/assets/lib/jspm_packages/',
   'scss_main': './src/assets/scss/main.scss',
   'css_file': {
     'dev': './build/css/app.css',
     'dist': './css/app.min.css'
-  }
+  },
+  'tsd_config': './tsd.json'
 };
 
 // Require all tasks in the 'gulp' folder.
 requireDir('./dev/gulp/tasks', { recurse: false });
-
-// Default task; start local server & watch for changes.
-//gulp.task('default', ['serve']);
-
-gulp.task('default', function (done) {
-  runSequence(
-    ['build:development', 'webdriver_update'],
-    ['webdriver_standalone',
-     'serve',
-     'unit-test:tdd',
-     'protractor'],
-    done);
-});

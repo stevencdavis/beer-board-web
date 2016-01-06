@@ -5,7 +5,8 @@
     "browser": true,
     "jasmine": true,
     "protractor": true,
-    "node": false
+    "node": false,
+    "es6"
   },
 
   "globals": {

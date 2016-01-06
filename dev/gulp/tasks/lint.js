@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var cache = require('gulp-cached');
 var esLint = require('gulp-eslint');
+var tsLint = require("gulp-tslint");
 var sassLint = require('gulp-sass-lint');
 
 // Lint JS
@@ -11,6 +12,14 @@ gulp.task('lint:js', function () {
     .pipe(cache('lint-js'))
     .pipe(esLint())
     .pipe(esLint.format());
+});
+
+
+gulp.task("lint:ts", function () {
+  return gulp.src(global.paths.ts)
+    .pipe(cache('lint-ts'))
+    .pipe(tsLint())
+    .pipe(tsLint.report("verbose"))
 });
 
 // Lint SASS
@@ -23,4 +32,4 @@ gulp.task('lint:scss', function () {
 });
 
 // Lint all the things!
-gulp.task('lint', ['lint:js', 'lint:scss']);
+gulp.task('lint', ['lint:js', 'lint:ts', 'lint:scss']);

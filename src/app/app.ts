@@ -1,9 +1,15 @@
+/// <reference path="../typings/tsd.d.ts" />
+
+
+// /// <reference path="../build/js/modernizr-custom.d.ts" />
+
 /**
  * Main application file
  */
 
 // angular
-import angular from 'angular';
+import * as angular from 'angular';
+//import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-animate';
 
@@ -14,8 +20,8 @@ import 'foundation-apps/js/angular/components/panel/panel';
 
 // app
 import routes from './app.routes';
-import templatesModule from 'build/_templates';
-import Modernizr from 'build/modernizr-custom';
+import templatesModule from 'build/js/_templates';
+import * as Modernizr from 'build/js/modernizr-custom';
 import Foo from './components/foo/foo';
 
 

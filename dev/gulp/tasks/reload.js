@@ -13,3 +13,8 @@ gulp.task('reload:js', function() {
   gulp.src(global.paths.js)
     .pipe(browserSync.reload({stream: true}));
 });
+
+gulp.task('reload:ts', function() {
+  gulp.src(global.paths.ts)
+    .pipe(browserSync.reload({stream: true}));
+});

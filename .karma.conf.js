@@ -24,7 +24,7 @@ module.exports = function(config) {
       config: 'src/config.js',
       loadFiles: ['test/**/*.test.js'],
       serveFiles: [
-        'src/app/**/*.js',
+        //'src/app/**/*.ts',
         'src/build/**/*.js'
       ],
       packages: 'src/assets/lib/jspm_packages'
@@ -44,8 +44,32 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    //preprocessors: {
+    //  'src/app/**/*.ts': ['typescript'],
+    ////  'src/build/**/*.ts': ['typescript'],
+    ////  'test/**/*.ts': ['typescript']
+    //},
+
+    //typescriptPreprocessor: {
+    //  // options passed to the typescript compiler
+    //  options: {
+    //    sourceMap: true, // (optional) Generates corresponding .map file.
+    //    target: 'ES5', // (optional) Specify ECMAScript target version: 'ES3' (default), or 'ES5'
+    //    //module: 'commonjs', // (optional) Specify module code generation: 'commonjs' or 'amd'
+    //    noImplicitAny: false, // (optional) Warn on expressions and declarations with an implied 'any' type.
+    //    //noResolve: true, // (optional) Skip resolution and preprocessing.
+    //    removeComments: true, // (optional) Do not emit comments to output.
+    //    concatenateOutput: false // (optional) Concatenate and emit output to single file. By default true if module option is omited, otherwise false.
+    //  },
+    //  // extra typing definitions to pass to the compiler (globs allowed)
+    //  typings: [
+    //    'src/typings/tsd.d.ts'
+    //  ],
+    //  // transforming the filenames
+    //  transformPath: function(path) {
+    //    return path.replace(/\.ts$/, '.js');
+    //  }
+    //},
 
 
     // test results reporter to use
