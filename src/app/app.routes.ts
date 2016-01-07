@@ -2,7 +2,8 @@
  * App configuration
  */
 
-export default /* @ngInject */ ($stateProvider, $urlRouterProvider) => {
+export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
+
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -12,10 +13,10 @@ export default /* @ngInject */ ($stateProvider, $urlRouterProvider) => {
       views: {
         main: {
           templateUrl: 'app/components/dashboard/dashboard.html',
-          controller: /* @ngInject */ ($scope) => {
-            $scope.greeting = 'Ahoy';
-          }
+          controller: ['$scope', ($scope) => {
+            $scope.greeting = 'Ahoy!';
+          }]
         }
       }
     });
-};
+}];

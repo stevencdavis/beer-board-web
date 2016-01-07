@@ -45,7 +45,9 @@ app.config(routes);
 
 // bootstrap app
 angular.element(document).ready(function() {
-  angular.bootstrap(document, [app.name]);
+  angular.bootstrap(document, [app.name], {
+    strictDi: true
+  });
 });
 
 
