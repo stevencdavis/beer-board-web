@@ -6,8 +6,10 @@ var modernizr = require('gulp-modernizr');
 var rename = require('gulp-rename');
 
 
+// Create a custom Modernizr build that only includes the functions that the project uses
 gulp.task('modernizr', function() {
-  // create typing file so we can import via typescript
+
+  // Create typing file so we can import via typescript
   fs.writeFileSync(global.paths.build + '/js/modernizr-custom.d.ts',
     'declare var Modernizr;\n' +
     'export default Modernizr;'

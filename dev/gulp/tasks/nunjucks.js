@@ -4,12 +4,15 @@ var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
 var browserSync = require('browser-sync');
 
+
+// Nunjucks compilation options
 var options = {
   watch: false,
   trimBlocks: true,
   lstripBlocks: true
 };
 
+// Create a development compilation of the nunjucks files
 gulp.task('nunjucks:development', function () {
   nunjucksRender.nunjucks.configure(['./src'], options);
   return gulp.src(global.paths.nunjucks)
@@ -21,6 +24,7 @@ gulp.task('nunjucks:development', function () {
     .pipe(browserSync.reload({stream: true}));
 });
 
+// Create a production version of the nunjucks files
 gulp.task('nunjucks:production', function () {
   nunjucksRender.nunjucks.configure(['./src'], options);
   return gulp.src(global.paths.nunjucks)

@@ -6,6 +6,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var rename = require("gulp-rename");
 
 
+// Create a JSPM / SystemJS bundle file
 gulp.task('bundle', function(){
   return gulp.src(global.config.bundle_entry_point)
     .pipe(sourcemaps.init())
