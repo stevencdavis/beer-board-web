@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var gulp_jspm = require('gulp-jspm');
+var jspm = require('gulp-jspm');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require("gulp-rename");
 
@@ -10,9 +10,9 @@ var rename = require("gulp-rename");
 gulp.task('bundle', function(){
   return gulp.src(global.config.bundle_entry_point)
     .pipe(sourcemaps.init())
-    .pipe(gulp_jspm({
+    .pipe(jspm({
       selfExecutingBundle: true,
-      minify: false
+      minify: false                  // We'll minify later with Uglify for greater control
     }))
     .pipe(rename({
       suffix: '.min'
