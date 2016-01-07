@@ -7,10 +7,10 @@ var runSequence = require('run-sequence');
 gulp.task('build:development', function (done) {
   runSequence(
     'clean',
-    'lint',
-    'modernizr',
     ['tsd',
-     'scss:development',
+     'lint',
+     'modernizr'],
+    ['scss:development',
      'nunjucks:development',
      'templates:development',
      'typescript'],
@@ -20,10 +20,10 @@ gulp.task('build:development', function (done) {
 gulp.task('build:production', function (done) {
   runSequence(
     'clean',
-    'lint',
-    'modernizr',
     ['tsd',
-     'scss:production',
+     'lint',
+     'modernizr'],
+    ['scss:production',
      'nunjucks:production',
      'templates:production',
      'typescript'],
