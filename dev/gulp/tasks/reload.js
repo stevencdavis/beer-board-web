@@ -10,11 +10,6 @@ gulp.task('reload:html', function() {
 });
 
 gulp.task('reload:js', function() {
-  gulp.src(global.paths.js)
-    .pipe(browserSync.reload({stream: true}));
-});
-
-gulp.task('reload:ts', function() {
-  gulp.src(global.paths.ts)
+  gulp.src(global.paths.js_app, global.paths.js_build)
     .pipe(browserSync.reload({stream: true}));
 });

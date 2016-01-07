@@ -26,8 +26,8 @@ gulp.task('serve', function () {
   gulp.watch([global.paths.nunjucks], ['nunjucks:development']).on('change', logChanges);
   gulp.watch([global.paths.html], ['reload:html']).on('change', logChanges);
   gulp.watch([global.paths.scss], ['lint:scss', 'scss:development']).on('change', logChanges);
-  gulp.watch([global.paths.js], ['lint:js', 'reload:js']).on('change', logChanges);
-  gulp.watch([global.paths.ts], ['lint:ts', 'reload:ts']).on('change', logChanges);
+  gulp.watch([global.paths.js_app, global.paths.js_build], ['lint:js', 'reload:js']).on('change', logChanges);
+  gulp.watch([global.paths.ts], ['lint:ts', 'typescript']).on('change', logChanges);
   gulp.watch([global.paths.e2e_tests], ['protractor']).on('change', logChanges);
   // Note: we don't need to watch unit test files since karma does that for us
 });

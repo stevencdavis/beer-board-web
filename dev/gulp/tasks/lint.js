@@ -6,15 +6,16 @@ var esLint = require('gulp-eslint');
 var tsLint = require("gulp-tslint");
 var sassLint = require('gulp-sass-lint');
 
+
 // Lint JS
 gulp.task('lint:js', function () {
-  return gulp.src(global.paths.js)
+  return gulp.src(global.paths.js_app)
     .pipe(cache('lint-js'))
     .pipe(esLint())
     .pipe(esLint.format());
 });
 
-
+// Lint TypeScript
 gulp.task("lint:ts", function () {
   return gulp.src(global.paths.ts)
     .pipe(cache('lint-ts'))

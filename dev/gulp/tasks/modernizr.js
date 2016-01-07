@@ -13,10 +13,10 @@ gulp.task('modernizr', function() {
     'export default Modernizr;'
   );
 
-  return gulp.src(global.paths.js)
+  return gulp.src(global.paths.js_app, global.paths.ts)
     .pipe(modernizr({
       "files": {
-        "src": [global.paths.js]
+        "src": [global.paths.js_app, global.paths.ts]
       },
       "tests": [
         "touchevents"

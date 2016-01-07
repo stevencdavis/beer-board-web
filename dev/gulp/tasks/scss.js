@@ -10,6 +10,7 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 
+
 gulp.task('scss:development', function () {
   return gulp.src(global.config.scss_main)
     .pipe(sourcemaps.init())
@@ -17,7 +18,7 @@ gulp.task('scss:development', function () {
       errLogToConsole: true,
       outputStyle: 'nested',
       sourceComments: true,
-      functions: sassJspm.resolve_function(global.config.jspm_packages),
+      functions: sassJspm.resolve_function(global.paths.jspm_packages),
       importer: sassJspm.importer
     })
       .on('error', function (e) {
@@ -40,7 +41,7 @@ gulp.task('scss:production', function () {
     .pipe(sass({
       errLogToConsole: true,
       outputStyle: 'compressed',
-      functions: sassJspm.resolve_function(global.config.jspm_packages),
+      functions: sassJspm.resolve_function(global.paths.jspm_packages),
       importer: sassJspm.importer
     })
       .on('error', function (e) {

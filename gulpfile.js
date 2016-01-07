@@ -9,11 +9,9 @@ var requireDir = require('require-dir');
 
 // Specify paths & globbing patterns for tasks.
 global.paths = {
-  //// JSPM config files
-  //'jspm': ['jspm_packages/system.js', 'config.js'],
 
-  // Sources folder
-  //'src': './src',
+  // JSPM packages
+  'jspm_packages': './src/assets/lib/jspm_packages/',
 
   // Unit test files
   'unit_tests': 'test/**/*.test.js',
@@ -39,9 +37,14 @@ global.paths = {
   ],
 
   // JS sources
-  'js': [
+  'js_app': [
     './src/app/**/*.js',
     './src/config.js'
+  ],
+
+  // JS builds
+  'js_build': [
+    './src/build/**/*.js'
   ],
 
   // JS sources
@@ -57,9 +60,6 @@ global.paths = {
     './src/assets/scss/**/*.scss'
   ],
 
-  //// Image sources
-  //'img': './src/img/*',
-
   // CSS folders
   'css': {
     'build': './src/build/css',
@@ -73,9 +73,9 @@ global.paths = {
   'dist': './dist'
 };
 
+// Configs that refer to individual files
 global.config = {
   'bundle_entry_point': './src/build/app/app.js',
-  'jspm_packages': './src/assets/lib/jspm_packages/',
   'scss_main': './src/assets/scss/main.scss',
   'css_file': {
     'dev': './build/css/app.css',
