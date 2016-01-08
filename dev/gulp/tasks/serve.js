@@ -5,15 +5,16 @@
 'use strict';
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
+var bs = require('browser-sync');
 var path = require('path');
 var util = require('gulp-util');
+var notify = require("gulp-notify");
 
 
 gulp.task('serve', function () {
 
   // serve with BrowserSync
-  browserSync({
+  bs.init({
     server: {
       baseDir: './src',
       index: 'build/index.html',
@@ -38,4 +39,5 @@ function logChanges(event) {
     util.colors.green('File ' + event.type + ': ') +
     util.colors.magenta(path.basename(event.path))
   );
+  notify('File ' + event.type + ': ' + path.basename(event.path));
 }

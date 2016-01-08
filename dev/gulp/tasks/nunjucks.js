@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
-var browserSync = require('browser-sync');
+var bs = require('browser-sync');
 
 
 // Nunjucks compilation options
@@ -21,7 +21,7 @@ gulp.task('nunjucks:development', function () {
       css_file: global.config.css_file.dev
     }))
     .pipe(gulp.dest(global.paths.build))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(bs.reload({stream: true}));
 });
 
 // Create a production version of the nunjucks files
