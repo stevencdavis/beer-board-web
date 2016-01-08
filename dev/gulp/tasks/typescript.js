@@ -12,6 +12,6 @@ gulp.task('typescript', function() {
   return gulp.src(global.paths.ts)
     .pipe(sourcemaps.init())
     .pipe(tsc(tsProject))
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
     .pipe(gulp.dest(global.paths.build));
 });
