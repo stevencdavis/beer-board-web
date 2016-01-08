@@ -37,7 +37,6 @@ The Iris app is build using the following tools and technologies:
 * autoprefixer
 * sass-jspm-importer
 * angular-templatecache
-* ng-annotate
 * sourcemaps (CSS, TypeScript, ES5 / ES6)
 
 
