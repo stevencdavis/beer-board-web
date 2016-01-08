@@ -2,12 +2,24 @@
 
 var gulp = require('gulp');
 var tsd = require('gulp-tsd');
+var plumber = require('gulp-plumber');
 
 
-gulp.task('tsd', function (callback) {
-  tsd({
-    "command": "reinstall", // this plugin supports only "reinstall"
-    "latest": true,         // if this property is true, tsd always fetches HEAD definitions
-    "config": global.config.tsd_config, // file path for configuration file (see below)
-  }, callback);
+gulp.task('tsd', function () {
+  return gulp.src('./.tsd.config.json')
+    .pipe(plumber())
+    .pipe(tsd())
+    .on('error', function(e) {
+      console.log("[tsd] Error fetching latest typings from GitHub (probably rate limited): ", e.message);
+      //this.emit('end');
+    });
 });
+
+
+//gulp.task('tsd', function (callback) {
+//  tsd({
+//    command: 'reinstall',
+//    latest: true,
+//    config: './tsd.json'
+//  }, callback);
+//});
