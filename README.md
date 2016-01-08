@@ -23,6 +23,7 @@ The Iris app is build using the following tools and technologies:
 * NPM (package manager and build lib repo)
 * SCSS (Sass / CSS)
 * TSD / DefinitelyTyped
+* jscpd (copy/paste detection)
 * Karma / Jasmine
 * Istanbul test coverage (via karma-coverage & remap-istanbul)
 * Protractor / Selenium
