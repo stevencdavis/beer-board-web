@@ -27,6 +27,7 @@ The Iris app is build using the following tools and technologies:
 * Karma / Jasmine
 * Istanbul test coverage (via karma-coverage & remap-istanbul)
 * Protractor / Selenium
+* cache busting (via gulp-rev / gulp-rev-replace)
 * Browsersync
 
 ### Build libraries

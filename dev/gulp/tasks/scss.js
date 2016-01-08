@@ -8,6 +8,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
+var rev = require("gulp-rev");
 var browserSync = require('browser-sync');
 
 
@@ -54,6 +55,9 @@ gulp.task('scss:production', function () {
     .pipe(rename({
       suffix: '.min'
     }))
+    .pipe(rev())
     .pipe(sourcemaps.write('.' /* write as a separate file */))
-    .pipe(gulp.dest(global.paths.css.dist));
+    .pipe(gulp.dest(global.paths.css.dist))
+    .pipe(rev.manifest(global.config.manifest_file, {base: global.paths.dist, merge: true}))
+    .pipe(gulp.dest(global.paths.dist));
 });

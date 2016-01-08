@@ -32,6 +32,7 @@ gulp.task('build:production', function (done) {
      'typescript'],
     'jscpd:css',
     'bundle',
+    'revreplace',
     'optimize',
     done);
 });
