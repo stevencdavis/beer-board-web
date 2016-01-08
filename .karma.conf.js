@@ -20,9 +20,11 @@ module.exports = function(config) {
 
     // configuration for karma-jspm
     jspm: {
-      useBundles: true,
+      useBundles: false,
       config: 'src/config.js',
-      loadFiles: ['test/**/*.test.js'],
+      loadFiles: [
+        'test/**/*.test.js'
+      ],
       serveFiles: [
         //'src/app/**/*.ts',
         'src/build/**/*.js'
@@ -41,6 +43,26 @@ module.exports = function(config) {
     exclude: [
     ],
 
+
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'src/build/app/**/*.js': ['babel', 'coverage']
+    },
+
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015']//,
+        //sourceMap: 'inline'
+      }//,
+      //filename: function (file) {
+      //  return file.originalPath.replace(/\.js$/, '.es5.js');
+      //},
+      //sourceFileName: function (file) {
+      //  return file.originalPath;
+      //}
+    },
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -75,8 +97,27 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
+    coverageReporter: {
+      reporters: [
+        {
+          type: 'text'
+        },
+        {
+          type: 'text-summary'
+        },
+        {
+          type: 'html',
+          dir: 'src/build/reports/coverage/es5'
+        },
+        {
+          type: 'json',
+          dir: 'src/build/reports/coverage',
+          subdir: '.'
+        }
+      ]
+    },
 
     // web server port
     port: 9876,

@@ -70,7 +70,10 @@ global.paths = {
   'build': './src/build',
 
   // Distribution folder
-  'dist': './dist'
+  'dist': './dist',
+
+  // Test coverage folder
+  'coverage': './src/build/reports/coverage'
 };
 
 // Configs that refer to individual files
@@ -81,7 +84,9 @@ global.config = {
     'dev': './build/css/app.css',
     'dist': './css/app.min.css'
   },
-  'tsd_config': './tsd.json'
+  'tsd_config': './tsd.json',
+  'manifest_file': global.paths.dist + '/rev-manifest.json',
+  'coverage_file': global.paths.coverage + '/coverage-final.json'
 };
 
 // Require all tasks in the 'gulp' folder.
