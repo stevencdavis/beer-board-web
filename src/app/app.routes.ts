@@ -14,7 +14,7 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
         main: {
           templateUrl: 'app/components/dashboard/dashboard.html',
           controller: ['$scope', ($scope) => {
-            $scope.greeting = 'Ahoy!';
+            $scope.greeting = 'Ahoy';
           }]
         }
       }
