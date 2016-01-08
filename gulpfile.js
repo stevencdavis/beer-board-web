@@ -47,11 +47,16 @@ global.paths = {
     './src/build/**/*.js'
   ],
 
-  // JS sources
+  // TypeSript sources
   'ts': [
     './src/**/*.ts',
     //'!./src/build/**/',
     '!./src/assets/lib/jspm_packages/**/'
+  ],
+
+  // User-created TypeScript sources
+  'ts_user': [
+    './src/app/**/*.ts'
   ],
 
   // SASS sources
