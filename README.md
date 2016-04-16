@@ -1,5 +1,7 @@
 # Iris
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## Tech Stack
 
 The Iris app is build using the following tools and technologies:
@@ -41,7 +43,6 @@ The Iris app is build using the following tools and technologies:
 * sass-jspm-importer
 * angular-templatecache
 * sourcemaps (CSS, TypeScript, ES5 / ES6)
-
 
 ## Dev setup
 

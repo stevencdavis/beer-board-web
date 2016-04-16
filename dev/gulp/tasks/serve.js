@@ -15,14 +15,15 @@ gulp.task('serve', function () {
 
   // serve with BrowserSync
   bs.init({
-    server: {
-      baseDir: './src',
-      index: 'build/index.html',
-      logConnections: true
-    },
-    notify: true,
-    open: false                 // don't open the url automatically
-  });
+            server: {
+              baseDir:        './src',
+              index:          'build/index.html',
+              logConnections: true
+            },
+            notify: true,
+            port:   3000,
+            open:   false                 // don't open the url automatically
+          });
 
   gulp.watch([global.paths.nunjucks], ['nunjucks:development']).on('change', logChanges);
   gulp.watch([global.paths.html], ['reload:html']).on('change', logChanges);
