@@ -1,49 +1,88 @@
 <div class="grid-frame vertical">
 
   <div class="primary title-bar">
-    <div class="center title"><a ui-sref="home">Iris</a></div>
-    <span class="right"><a ui-sref="settings">Settings</a></span>
-  </div>
-
-  <div class="grid-block">
-    <div zf-panel="" id="testPanel">
-      <p>Panel</p>
-    </div>
-    <div class="grid-content">
-      <h1 class="main-content">Main Content</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </div>
-  </div>
-
-  <div class="grid-block">
-
-    <div class="grid-content">
-      <h1>Hello JSPM!</h1>
-
-      <a href="#" zf-toggle="testPanel" class="button">Toggle Panel</a>
-
-      <input type="text" ng-model="greeting">
-
-      <br><br>
-
-      <i id="greeting-output">{{ greeting }}!!!</i>
-
-      <br><br>
-
-    </div>
+    <div class="center title"><a ui-sref="home">beerboard</a></div>
+    <span class="right"><a ui-sref="settings">Drink what you love</a></span>
   </div>
 
   <div class="grid-block">
     <div class="grid-content">
-      <div class="dark card">
-        <img src="http://placekitten.com/g/400/200">
-        <div class="card-divider">
-          This is content
-        </div>
-        <div class="card-section">
-          <h4>The Basics: Group and Block</h4>
-          <p>The most basic elements in the Foundation for Apps grid are the Group and Block.</p>
-        </div>
+      <h1 class="main-content">Current beer status</h1>
+      <div class="grid-content">
+        <section class="block-list">
+          <header>WEWORK NOMAD</header>
+          <ul>
+            <li class="grid-block v-align" ng-repeat="beer in vm.beers">
+              <div class="grid-content">
+                <span>Floor {{ beer.floor }}</span>
+              </div>
+              <div class="grid-content">
+                <input type="text"
+                       id="type"
+                       ng-model="beer.type"
+                       placeholder="enter beer"
+                       set-focus="beer.isEditMode"
+                       ng-disabled="!beer.isEditMode"
+                       ng-change="vm.updateType(beer)">
+              </div>
+              <div class="grid-content">
+                <button ng-if="!beer.isEditMode" type="button" ng-click="vm.toggleEditMode(beer)">Edit</button>
+                <button ng-if="beer.isEditMode" type="button" ng-click="vm.saveChanges(beer)">Save</button>
+              </div>
+              <div class="grid-content">
+                <a ng-href="https://untappd.com/search?q={{beer.type}}">
+                  <img zf-iconic="" icon="thumb" size="medium"/>
+                  View on Untappd!</a>
+              </div>
+              <div class="grid-content beer-good">
+                <input type="checkbox"
+                       name="good-{{ beer.floor }}"
+                       id="good"
+                       ng-model="beer.good"
+                       ng-change="vm.clearProblems(beer)"
+                       ng-disabled="beer.good">
+              </div>
+              <div class="grid-content">
+                <input type="checkbox"
+                       name="problem-empty-{{ beer.floor }}"
+                       id="empty"
+                       ng-model="beer.empty"
+                       ng-change="vm.updateStatus(beer)">
+              </div>
+              <div class="grid-content">
+                <input type="checkbox"
+                       name="problem-foamy-{{ beer.floor }}"
+                       id="foamy"
+                       ng-model="beer.foamy"
+                       ng-change="vm.updateStatus(beer)">
+              </div>
+              <div class="grid-content">
+                <input type="checkbox"
+                       name="problem-flat-{{ beer.floor }}"
+                       id="flat"
+                       ng-model="beer.flat"
+                       ng-change="vm.updateStatus(beer)">
+              </div>
+              <div class="grid-content">
+                <input type="checkbox"
+                       name="problem-warm-{{ beer.floor }}"
+                       id="warm"
+                       ng-model="beer.warm"
+                       ng-change="vm.updateStatus(beer)">
+              </div>
+              <div class="grid-content">
+                <input type="checkbox"
+                       name="problem-slow-{{ beer.floor }}"
+                       id="slow"
+                       ng-model="beer.slow"
+                       ng-change="vm.updateStatus(beer)">
+              </div>
+              <div class="grid-content">
+                {{ beer.modified }}
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
     </div>
   </div>

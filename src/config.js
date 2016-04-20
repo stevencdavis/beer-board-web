@@ -14,7 +14,7 @@ System.config({
   },
 
   map: {
-    "angular": "github:angular/bower-angular@1.4.8",
+    "angular": "github:angular/bower-angular@1.5.4",
     "angular-animate": "github:angular/bower-angular-animate@1.4.8",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.34",
@@ -22,12 +22,14 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
     "foundation-apps": "npm:foundation-apps@1.2.0",
+    "lodash": "npm:lodash@4.11.1",
     "modernizr": "npm:modernizr@3.2.0",
+    "restangular": "github:mgonto/restangular@1.5.2",
     "github:angular-ui/ui-router@0.2.15": {
-      "angular": "github:angular/bower-angular@1.4.8"
+      "angular": "github:angular/bower-angular@1.5.4"
     },
     "github:angular/bower-angular-animate@1.4.8": {
-      "angular": "github:angular/bower-angular@1.4.8"
+      "angular": "github:angular/bower-angular@1.5.4"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -94,6 +96,10 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:mgonto/restangular@1.5.2": {
+      "angular": "github:angular/bower-angular@1.5.4",
+      "lodash": "npm:lodash@3.10.1"
     },
     "npm:amdefine@1.0.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -646,6 +652,10 @@ System.config({
       "left-pad": "npm:left-pad@0.0.3"
     },
     "npm:lodash@3.10.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:lodash@4.11.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:loose-envify@1.1.0": {
