@@ -1,0 +1,12 @@
+{
+  "name": "iris",
+  "version": false,
+  "ambientDependencies": {
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#2d448c0a3152e8871521848c5c2c61ab4e2a2cc9",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#2d448c0a3152e8871521848c5c2c61ab4e2a2cc9",
+    "lodash": "github:DefinitelyTyped/DefinitelyTyped/lodash/lodash.d.ts#2d448c0a3152e8871521848c5c2c61ab4e2a2cc9",
+    "moment": "github:DefinitelyTyped/DefinitelyTyped/moment/moment.d.ts#2d448c0a3152e8871521848c5c2c61ab4e2a2cc9",
+    "moment-node": "github:DefinitelyTyped/DefinitelyTyped/moment/moment-node.d.ts#2d448c0a3152e8871521848c5c2c61ab4e2a2cc9",
+    "foundation-sites": "github:DefinitelyTyped/DefinitelyTyped/foundation-sites/foundation-sites.d.ts#2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+  }
+}

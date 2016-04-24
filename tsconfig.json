@@ -7,7 +7,7 @@
     "typeCheck": true,
     "removeComments": false
   },
-  "exclude": [
-    "node_modules"
+  "files": [
+    "typings/browser.d.ts"
   ]
 }

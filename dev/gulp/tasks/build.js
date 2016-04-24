@@ -7,7 +7,7 @@ var runSequence = require('run-sequence');
 gulp.task('build:development', function (done) {
   runSequence(
     'clean',
-    ['tsd',
+    ['typings',
      'lint',
      'modernizr',
      'jscpd:ts'],
@@ -22,7 +22,7 @@ gulp.task('build:development', function (done) {
 gulp.task('build:production', function (done) {
   runSequence(
     'clean',
-    ['tsd',
+    ['typings',
      'lint',
      'modernizr',
      'jscpd:ts'],
