@@ -1,1 +1,62 @@
-@import 'jspm:foundation-apps/scss/foundation';
+@import 'base';
+
+//@import 'jspm:foundation-apps/scss/foundation';
+
+$foundation-version: '1.2.0';
+
+// Make sure the charset is set appropriately
+@charset 'UTF-8';
+
+// Libraries (let's make Normalize an external dependency eventually)
+@import 'jspm:foundation-apps/scss/vendor/normalize';
+
+// Helpers
+@import
+'jspm:foundation-apps/scss/helpers/functions',
+'jspm:foundation-apps/scss/helpers/mixins',
+'jspm:foundation-apps/scss/helpers/breakpoints',
+'jspm:foundation-apps/scss/helpers/images';
+
+// Global styles
+@import
+'jspm:foundation-apps/scss/global';
+
+// Components
+@import
+'jspm:foundation-apps/scss/components/iconic',
+'jspm:foundation-apps/scss/components/action-sheet',
+'jspm:foundation-apps/scss/components/block-list',
+'jspm:foundation-apps/scss/components/card',
+'jspm:foundation-apps/scss/components/extras',
+'jspm:foundation-apps/scss/components/forms',
+'jspm:foundation-apps/scss/components/grid',
+'jspm:foundation-apps/scss/components/title-bar',
+'jspm:foundation-apps/scss/components/label',
+'jspm:foundation-apps/scss/components/list',
+'jspm:foundation-apps/scss/components/menu-bar',
+'jspm:foundation-apps/scss/components/modal',
+'jspm:foundation-apps/scss/components/motion',
+'jspm:foundation-apps/scss/components/notification',
+'jspm:foundation-apps/scss/components/off-canvas',
+'jspm:foundation-apps/scss/components/popup',
+'jspm:foundation-apps/scss/components/tabs',
+'jspm:foundation-apps/scss/components/accordion',
+'jspm:foundation-apps/scss/components/typography',
+'jspm:foundation-apps/scss/components/utilities';
+
+
+@import 'jspm:foundation-sites/scss/global';
+@import 'jspm:foundation-sites/scss/util/util';
+//@import 'jspm:foundation-sites/scss/grid/grid';
+@import 'jspm:foundation-sites/scss/typography/typography';
+//@import 'jspm:foundation-sites/scss/forms/forms';
+@import 'jspm:foundation-sites/scss/components/button';
+@import 'jspm:foundation-sites/scss/components/switch';
+@import 'jspm:foundation-sites/scss/components/tooltip';
+@include foundation-global-styles;
+//@include foundation-typography;
+@include foundation-button;
+@include foundation-switch;
+@include foundation-tooltip;
+
+@import 'jspm:fontawesome/scss/font-awesome';
