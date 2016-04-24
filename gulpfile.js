@@ -71,6 +71,17 @@ global.paths = {
     'dist': './dist/css'
   },
 
+  // Third-party assets
+  'assets_jspm': [{
+    'package': 'foundation-apps',
+    'src': 'iconic/**/*.svg',
+    'base': 'img/iconic'
+  },{
+    'package': 'fontawesome',
+    'src': 'fonts/**/fontawesome-*',
+    'base': 'fonts/fontawesome'
+  }],
+
   // Build folder (for Sass and templates compilation)
   'build': './src/build',
 
