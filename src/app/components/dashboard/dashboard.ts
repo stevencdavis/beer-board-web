@@ -1,16 +1,18 @@
-import * as _ from 'lodash';
-import 'foundation-apps/dist/js/foundation-apps';
+import * as momentObj from "moment";
+let moment = momentObj['default'];
 
 
 export class Dashboard {
 
   scope:any;
+  timeout:any;
   beersResource:any;
   statuses:any;
   beers:any;
 
-  constructor($scope:ng.IScope, Restangular) {
+  constructor($scope:ng.IScope, $timeout, Restangular) {
     this.scope = $scope;
+    this.timeout = $timeout;
     this.beersResource = Restangular.all('/beers');
     this.statuses = ['empty', 'foamy', 'flat', 'warm', 'slow'];
 
@@ -36,7 +38,15 @@ export class Dashboard {
           beer.good = !_.some(this.statuses, (status:string) => {
             return beer[status];
           });
+
+          beer.isEditMode = false;
         });
+
+        this.timeout(function () {
+          console.debug("initializing foundation!");
+          $(document).foundation();
+        }, 0, false);
+
       });
   }
 
@@ -63,12 +73,13 @@ export class Dashboard {
     this.save(beer);
   }
 
-   static toggleEditMode(beer) {
+  toggleEditMode(beer) {
+    console.debug('editing:', beer);
     beer.isEditMode = !beer.isEditMode;
   }
 
   saveChanges(beer) {
-    Dashboard.toggleEditMode(beer);
+    this.toggleEditMode(beer);
     this.save(beer);
   }
 
@@ -77,5 +88,9 @@ export class Dashboard {
       .then((result) => {
         console.debug('beer save result', result);
       });
+  }
+
+  dateToTimeAgo(d) {
+    return moment(d).fromNow();
   }
 }

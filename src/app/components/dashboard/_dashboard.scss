@@ -3,8 +3,43 @@
     background: $gray-light;
   }
 
+  .inline-label {
+    margin-bottom: 0;
+  }
+
+  .button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 4em;
+  }
+
+  .block-list {
+    .switch {
+      display: inline-block;
+      margin-bottom: 0;
+      position: relative;
+      right: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  input {
+    &[type='checkbox'] + label,
+    &[type='radio'] + label {
+      margin: 0;
+    }
+  }
+
   .beer-good {
     border-right: 1px solid $gray;
+  }
+
+  .external-link {
+    cursor: pointer;
+  }
+
+  blockquote {
+    margin: 0;
   }
 }
 

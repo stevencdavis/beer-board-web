@@ -2,7 +2,10 @@
  * App configuration
  */
 
-export default ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', 'API_CONFIG', ($stateProvider, $urlRouterProvider, RestangularProvider, API_CONFIG) => {
+export default ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', 'IconicProvider', 'API_CONFIG', 'PATH_CONFIG', ($stateProvider, $urlRouterProvider, RestangularProvider, IconicProvider, API_CONFIG, PATH_CONFIG) => {
+
+  console.log('iconic provider', IconicProvider);
+  IconicProvider.setAssetPath(PATH_CONFIG.iconic);
 
   $urlRouterProvider.otherwise('/');
 
