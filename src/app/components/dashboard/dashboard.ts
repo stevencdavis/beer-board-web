@@ -99,7 +99,7 @@ export class Dashboard {
   }
 
   getBestBets() {
-    console.debug(_.filter(this.beers, 'bestBet'));
+    // console.debug(_.filter(this.beers, 'bestBet'));
     return _.filter(this.beers, 'bestBet');
   }
 
