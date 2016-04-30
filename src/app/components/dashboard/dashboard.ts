@@ -94,7 +94,7 @@ export class Dashboard {
   updateBestBets() {
     _.forEach(this.beers, (beer) => {
       beer.bestBet = beer.status === 'good' && beer.type && this.isRecent(beer.modified);
-    };
+    });
     console.debug(this.beers);
   }
 
