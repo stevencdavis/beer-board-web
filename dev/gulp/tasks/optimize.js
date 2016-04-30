@@ -7,7 +7,7 @@ var gulp = require('gulp');
 var gulpIf = require('gulp-if');
 var gulpUglify = require('gulp-uglify');
 var size = require('gulp-size');
-var notify = require("gulp-notify");
+// var notify = require("gulp-notify");
 
 
 // Optimize the production build
@@ -22,6 +22,6 @@ gulp.task('optimize', function () {
     })))
 
     .pipe(gulp.dest(global.paths.dist))
-    .pipe(size({showFiles: true}))
-    .pipe(notify({message: "Production build complete!", onLast: true}));
+    .pipe(size({showFiles: true}));
+    // .pipe(notify({message: "Production build complete!", onLast: true}));
 });
