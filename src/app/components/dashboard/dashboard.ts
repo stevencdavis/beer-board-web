@@ -104,15 +104,15 @@ export class Dashboard {
   }
 
   dateToTimeAgo(d) {
-    return moment(d).fromNow();
+    return moment.utc(d).fromNow();
   }
 
   isRecent(d) {
-    return (moment().diff(moment(d), 'minutes') < 60);
+    return (moment().diff(moment.utc(d), 'minutes') < 60);
   }
 
   getAgeCategory(timestamp) {
-    var age = moment().diff(moment(timestamp), 'minutes');
+    var age = moment().diff(moment.utc(timestamp), 'minutes');
     if (age < 2) {
       return 'age-1';
     }
