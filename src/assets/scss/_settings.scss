@@ -1,4 +1,18 @@
+// foundation-apps
+$foundation-version: '1.2.0';
+
+
+// foundation-sites
+$global-flexbox: true;
+
 $global-radius: 0;
+
+$topbar-background: #000;
+
+$table-stripe: none;
+
+// flex grid row behavior
+$behavior: nest;
 
 $blockquote-padding: .5rem .5rem .5rem .5rem;
 

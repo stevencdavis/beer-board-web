@@ -8,13 +8,15 @@ export class Dashboard {
   timeout:any;
   beersResource:any;
   statuses:any;
+  problems:any;
   beers:any;
 
   constructor($scope:ng.IScope, $timeout, Restangular) {
     this.scope = $scope;
     this.timeout = $timeout;
     this.beersResource = Restangular.all('/beers');
-    this.statuses = ['empty', 'foamy', 'flat', 'warm', 'slow'];
+    this.statuses = ['good', 'empty', 'problems'];
+    this.problems = ['foamy', 'flat', 'warm', 'slow'];
 
     this.beers = [];
     this.getData();
@@ -30,17 +32,14 @@ export class Dashboard {
         _.forEach(this.beers, (beer) => {
 
           // Transform integers to booleans
-          _.forEach(this.statuses, (status:string) => {
-            beer[status] = !!beer[status];
-          });
-
-          // Set the "good" status of the beer
-          beer.good = !_.some(this.statuses, (status:string) => {
-            return beer[status];
+          _.forEach(this.problems, (problem:string) => {
+            beer[problem] = !!beer[problem];
           });
 
           beer.isEditMode = false;
         });
+
+        this.updateBestBets();
 
         this.timeout(function () {
           console.debug("initializing foundation!");
@@ -57,19 +56,19 @@ export class Dashboard {
 
   updateStatus(beer) {
     console.debug('beer status changed!', beer);
-    beer.good = !_.some(this.statuses, (status:string) => {
-      return beer[status];
-    });
+
+    beer.status = _.some(this.problems, (problem:string) => {
+      return beer[problem];
+    }) ? 'problems' : 'good';
+
     this.save(beer);
   }
 
   clearProblems(beer) {
-    console.debug('clearing beer statuses!', beer);
-    if (beer.good) {
-      _.forEach(this.statuses, (status) => {
-        beer[status] = false;
-      });
-    }
+    _.forEach(this.problems, (problem) => {
+      beer[problem] = false;
+    });
+
     this.save(beer);
   }
 
@@ -87,10 +86,53 @@ export class Dashboard {
     beer.save()
       .then((result) => {
         console.debug('beer save result', result);
+        beer.modified = result.modified;
+        this.updateBestBets();
       });
+  }
+
+  updateBestBets() {
+    _.forEach(this.beers, (beer) => {
+      beer.bestBet = beer.status === 'good' && beer.type && this.isRecent(beer.modified);
+    };
+    console.debug(this.beers);
+  }
+
+  getBestBets() {
+    console.debug(_.filter(this.beers, 'bestBet'));
+    return _.filter(this.beers, 'bestBet');
   }
 
   dateToTimeAgo(d) {
     return moment(d).fromNow();
+  }
+
+  isRecent(d) {
+    return (moment().diff(moment(d), 'minutes') < 60);
+  }
+
+  getAgeCategory(timestamp) {
+    var age = moment().diff(moment(timestamp), 'minutes');
+    if (age < 2) {
+      return 'age-1';
+    }
+    else if (age < 5) {
+      return 'age-2';
+    }
+    else if (age < 10) {
+      return 'age-3';
+    }
+    else if (age < 15) {
+      return 'age-4';
+    }
+    else if (age < 30) {
+      return 'age-5';
+    }
+    else if (age < 45) {
+      return 'age-6';
+    }
+    else {
+      return 'age-7';
+    }
   }
 }

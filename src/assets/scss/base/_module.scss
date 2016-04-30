@@ -1,9 +1,5 @@
 @import 'base';
 
-//@import 'jspm:foundation-apps/scss/foundation';
-
-$foundation-version: '1.2.0';
-
 // Make sure the charset is set appropriately
 @charset 'UTF-8';
 
@@ -11,52 +7,121 @@ $foundation-version: '1.2.0';
 @import 'jspm:foundation-apps/scss/vendor/normalize';
 
 // Helpers
-@import
-'jspm:foundation-apps/scss/helpers/functions',
+@import 'jspm:foundation-apps/scss/helpers/functions',
 'jspm:foundation-apps/scss/helpers/mixins',
 'jspm:foundation-apps/scss/helpers/breakpoints',
 'jspm:foundation-apps/scss/helpers/images';
+@import 'jspm:foundation-sites/scss/util/util';
 
 // Global styles
-@import
-'jspm:foundation-apps/scss/global';
-
-// Components
-@import
-'jspm:foundation-apps/scss/components/iconic',
-'jspm:foundation-apps/scss/components/action-sheet',
-'jspm:foundation-apps/scss/components/block-list',
-'jspm:foundation-apps/scss/components/card',
-'jspm:foundation-apps/scss/components/extras',
-'jspm:foundation-apps/scss/components/forms',
-'jspm:foundation-apps/scss/components/grid',
-'jspm:foundation-apps/scss/components/title-bar',
-'jspm:foundation-apps/scss/components/label',
-'jspm:foundation-apps/scss/components/list',
-'jspm:foundation-apps/scss/components/menu-bar',
-'jspm:foundation-apps/scss/components/modal',
-'jspm:foundation-apps/scss/components/motion',
-'jspm:foundation-apps/scss/components/notification',
-'jspm:foundation-apps/scss/components/off-canvas',
-'jspm:foundation-apps/scss/components/popup',
-'jspm:foundation-apps/scss/components/tabs',
-'jspm:foundation-apps/scss/components/accordion',
-'jspm:foundation-apps/scss/components/typography',
-'jspm:foundation-apps/scss/components/utilities';
-
-
 @import 'jspm:foundation-sites/scss/global';
-@import 'jspm:foundation-sites/scss/util/util';
-//@import 'jspm:foundation-sites/scss/grid/grid';
-@import 'jspm:foundation-sites/scss/typography/typography';
-//@import 'jspm:foundation-sites/scss/forms/forms';
-@import 'jspm:foundation-sites/scss/components/button';
-@import 'jspm:foundation-sites/scss/components/switch';
-@import 'jspm:foundation-sites/scss/components/tooltip';
-@include foundation-global-styles;
-//@include foundation-typography;
-@include foundation-button;
-@include foundation-switch;
-@include foundation-tooltip;
+@import 'jspm:foundation-apps/scss/global';
 
+//
+// Foundation for Sites Components
+//
+@import 'jspm:foundation-sites/scss/grid/grid';
+@import 'jspm:foundation-sites/scss/typography/typography';
+@import 'jspm:foundation-sites/scss/forms/forms';
+@import 'jspm:foundation-sites/scss/components/visibility';
+@import 'jspm:foundation-sites/scss/components/float';
+@import 'jspm:foundation-sites/scss/components/button';
+@import 'jspm:foundation-sites/scss/components/button-group';
+//@import 'jspm:foundation-sites/scss/components/accordion-menu'; // js
+//@import 'jspm:foundation-sites/scss/components/accordion'; // js
+//@import 'jspm:foundation-sites/scss/components/badge';
+//@import 'jspm:foundation-sites/scss/components/breadcrumbs';
+//@import 'jspm:foundation-sites/scss/components/callout';
+//@import 'jspm:foundation-sites/scss/components/close-button';
+//@import 'jspm:foundation-sites/scss/components/drilldown'; // js
+//@import 'jspm:foundation-sites/scss/components/dropdown-menu'; // js
+//@import 'jspm:foundation-sites/scss/components/dropdown'; // js
+@import 'jspm:foundation-sites/scss/components/flex';
+//@import 'jspm:foundation-sites/scss/components/flex-video';
+//@import 'jspm:foundation-sites/scss/components/label';
+//@import 'jspm:foundation-sites/scss/components/media-object';
+@import 'jspm:foundation-sites/scss/components/menu';
+@import 'jspm:foundation-sites/scss/components/menu-icon';
+//@import 'jspm:foundation-sites/scss/components/off-canvas'; // js
+//@import 'jspm:foundation-sites/scss/components/orbit'; // js
+//@import 'jspm:foundation-sites/scss/components/pagination';
+//@import 'jspm:foundation-sites/scss/components/progress-bar';
+//@import 'jspm:foundation-sites/scss/components/reveal'; // js
+//@import 'jspm:foundation-sites/scss/components/slider'; // js
+//@import 'jspm:foundation-sites/scss/components/sticky'; // js
+@import 'jspm:foundation-sites/scss/components/switch';
+@import 'jspm:foundation-sites/scss/components/table';
+//@import 'jspm:foundation-sites/scss/components/tabs'; // js
+@import 'jspm:foundation-sites/scss/components/title-bar';
+@import 'jspm:foundation-sites/scss/components/top-bar';
+//@import 'jspm:foundation-sites/scss/components/thumbnail';
+@import 'jspm:foundation-sites/scss/components/tooltip'; // js
+
+@include foundation-global-styles;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+//@include foundation-accordion; // js
+//@include foundation-accordion-menu; // js
+//@include foundation-badge;
+//@include foundation-breadcrumbs;
+@include foundation-button-group;
+//@include foundation-callout;
+//@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+//@include foundation-drilldown-menu; // js
+//@include foundation-dropdown; // js
+//@include foundation-dropdown-menu; // js
+//@include foundation-flex-video;
+//@include foundation-label;
+//@include foundation-media-object;
+//@include foundation-off-canvas; // js
+//@include foundation-orbit; // js
+//@include foundation-pagination;
+//@include foundation-progress-bar;
+//@include foundation-slider; // js
+//@include foundation-sticky; // js
+//@include foundation-reveal; // js
+@include foundation-switch;
+@include foundation-table;
+//@include foundation-tabs; // js
+//@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip; // js
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+
+@include foundation-flex-classes;
+
+//
+// Foundation for Apps Components
+//
+@import 'jspm:foundation-apps/scss/components/iconic'; // js
+//@import 'jspm:foundation-apps/scss/components/action-sheet'; // js
+@import 'jspm:foundation-apps/scss/components/block-list';
+//@import "jspm:foundation-apps/scss/components/button";
+//@import "jspm:foundation-apps/scss/components/button-group";
+//@import 'jspm:foundation-apps/scss/components/card';
+@import 'jspm:foundation-apps/scss/components/extras'; // ?
+//@import 'jspm:foundation-apps/scss/components/forms';
+@import 'jspm:foundation-apps/scss/components/grid';
+//@import 'jspm:foundation-apps/scss/components/title-bar';
+//@import 'jspm:foundation-apps/scss/components/label';
+//@import 'jspm:foundation-apps/scss/components/list';
+//@import 'jspm:foundation-apps/scss/components/menu-bar';
+//@import 'jspm:foundation-apps/scss/components/modal'; // js
+//@import 'jspm:foundation-apps/scss/components/motion';
+//@import 'jspm:foundation-apps/scss/components/notification'; // js
+//@import 'jspm:foundation-apps/scss/components/off-canvas'; // js
+//@import 'jspm:foundation-apps/scss/components/popup'; // js
+//@import "jspm:foundation-apps/scss/components/switch";
+//@import 'jspm:foundation-apps/scss/components/tabs'; // js
+@import 'jspm:foundation-apps/scss/components/accordion'; // js
+//@import 'jspm:foundation-apps/scss/components/typography';
+//@import 'jspm:foundation-apps/scss/components/utilities';
+
+// Font Awesome
 @import 'jspm:fontawesome/scss/font-awesome';

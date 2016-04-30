@@ -33,7 +33,7 @@ export default ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', '
   RestangularProvider.addResponseInterceptor(function (data, operation, what, url, response, deferred) {
     var extractedData;
     // .. to look for getList operations
-    if (operation === "getList" || operation === "get" || operation === "post") {
+    if (operation === "getList" || operation === "get" || operation === "post" || operation === "put") {
       // .. and handle the data and meta data
       extractedData = data.results;
       extractedData.meta = data.meta;
