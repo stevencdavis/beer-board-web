@@ -62,40 +62,42 @@
     transform: translate3d(0, 0, 0);
   }
 
-  input {
-    &[type='text'] {
-      box-shadow: none;
-      margin-bottom: 0;
+  input[type='text'] {
+    box-shadow: none;
+    margin-bottom: 0;
 
-      &:disabled {
-        background: none;
-        border: 0;
-
-        &.clickable {
-          cursor: pointer;
-        }
-      }
+    &:disabled {
+      background: none;
+      border: 0;
     }
 
-    &[type='checkbox'] + label,
-    &[type='radio'] + label {
-      margin: 0;
-
-      &.float-center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    &:disabled.clickable {
+      cursor: pointer;
     }
+
+    &:hover.clickable {
+      text-decoration: underline;
+    }
+  }
+
+  input[type='checkbox'] + label,
+  input[type='radio'] + label {
+    margin: 0;
+
+    &.float-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .underline {
+    text-decoration: underline;
   }
 
   .has-tip {
     border: 0;
     font-weight: normal;
-  }
-
-  .beer-good {
-    border-right: 1px solid $gray;
   }
 
   .fill-width {
