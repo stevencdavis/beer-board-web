@@ -25,7 +25,31 @@
       <div class="small-1 shrink columns align-middle"><h6 class="float-center">{{ beer.floor }}</h6></div>
       <div class="small-11 columns align-middle">
         <div class="row no-margin-hr fill-width">
-          <div class="columns align-middle no-padding-hr">
+          <div ng-if="beer.type && !beer.isEditMode" class="show-for-small-only columns align-middle no-padding-hr">
+            <a ng-href="https://untappd.com/search?q={{beer.type}}">
+              <input type="text"
+                     id="type"
+                     ng-model="beer.type"
+                     placeholder="{{ beer.isEditMode ? 'enter beer' : 'no beer'}}"
+                     set-focus="beer.isEditMode"
+                     ng-disabled="!beer.isEditMode"
+                     class="underline"
+                     ng-class="{'clickable': (beer.type && !beer.isEditMode)}"
+                     ng-change="vm.updateType(beer)">
+            </a>
+          </div>
+          <div ng-if="!beer.type || beer.isEditMode" class="show-for-small-only columns align-middle no-padding-hr">
+            <input type="text"
+                   id="type"
+                   ng-model="beer.type"
+                   placeholder="{{ beer.isEditMode ? 'enter beer' : 'no beer'}}"
+                   set-focus="beer.isEditMode"
+                   ng-disabled="!beer.isEditMode"
+                   class="underline"
+                   ng-class="{'clickable': (beer.type && !beer.isEditMode)}"
+                   ng-change="vm.updateType(beer)">
+          </div>
+          <div ng-if="beer.type && !beer.isEditMode" class="show-for-medium columns align-middle no-padding-hr">
             <a ng-href="https://untappd.com/search?q={{beer.type}}">
               <span data-tooltip
                     aria-haspopup="{{ beer.type }}"
@@ -43,6 +67,16 @@
                        ng-change="vm.updateType(beer)">
               </span>
             </a>
+          </div>
+          <div ng-if="!beer.type || beer.isEditMode" class="show-for-medium columns align-middle no-padding-hr">
+            <input type="text"
+                   id="type"
+                   ng-model="beer.type"
+                   placeholder="{{ beer.isEditMode ? 'enter beer' : 'no beer'}}"
+                   set-focus="beer.isEditMode"
+                   ng-disabled="!beer.isEditMode"
+                   ng-class="{'clickable': (beer.type && !beer.isEditMode)}"
+                   ng-change="vm.updateType(beer)">
           </div>
           <div class="small-3 columns align-middle no-padding-hr">
             <div ng-if="!beer.isEditMode" class="fill-width">
