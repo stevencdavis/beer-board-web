@@ -99,20 +99,20 @@ export class Dashboard {
   }
 
   getBestBets() {
-    // console.debug(_.filter(this.beers, 'bestBet'));
     return _.filter(this.beers, 'bestBet');
   }
 
   dateToTimeAgo(d) {
-    return moment.utc(d).fromNow();
+    var dateTime = moment.utc(d).subtract(5, 'seconds');
+    return dateTime.local().fromNow();
   }
 
   isRecent(d) {
-    return (moment().diff(moment.utc(d), 'minutes') < 60);
+    return (moment.utc().diff(moment.utc(d), 'minutes') < 60);
   }
 
   getAgeCategory(timestamp) {
-    var age = moment().diff(moment.utc(timestamp), 'minutes');
+    var age = moment.utc().diff(moment.utc(timestamp), 'minutes');
     if (age < 2) {
       return 'age-1';
     }
