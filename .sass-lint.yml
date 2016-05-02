@@ -1,0 +1,9 @@
+rules:
+  force-element-nesting: 0
+  force-attribute-nesting: 0
+  no-qualifying-elements:
+    - 1
+    -
+      allow-element-with-attribute: true
+      allow-element-with-class: false
+      allow-element-with-id: false
