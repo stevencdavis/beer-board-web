@@ -137,7 +137,7 @@
         <div>Empty</div>
       </div>
       <!-- Status: Problems -->
-      <div class="small-4 columns align-middle text-center has-overlay"
+      <div class="small-4 columns align-middle text-center has-overlay problems"
            ng-class="{'selected-problems': beer.status === 'problems' && beer.type}">
         <div ng-class="{'overlay': !beer.type}"></div>
         <!--<div class="switch tiny">-->
@@ -160,7 +160,7 @@
       </div>
 
       <!-- Problems -->
-      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems animate-if">
         <!--<div class="switch tiny">-->
           <!--<input class="switch-input"-->
                  <!--type="checkbox"-->
@@ -180,7 +180,7 @@
         </div>
         <div>Foamy</div>
       </div>
-      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems animate-if">
         <!--<div class="switch tiny">-->
           <!--<input class="switch-input"-->
                  <!--type="checkbox"-->
@@ -200,7 +200,7 @@
         </div>
         <div>Flat</div>
       </div>
-      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems animate-if">
         <!--<div class="switch tiny">-->
           <!--<input class="switch-input"-->
                  <!--type="checkbox"-->
@@ -220,7 +220,7 @@
         </div>
         <div>Warm</div>
       </div>
-      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems animate-if">
         <!--<div class="switch tiny">-->
           <!--<input class="switch-input"-->
                  <!--type="checkbox"-->
