@@ -33,11 +33,79 @@
     }
   }
 
+  .page-title {
+    font-family: 'Cantata One', serif;
+  }
+
+  .page-title a {
+    color: $white;
+  }
+
+  .page-subtitle {
+    color: $white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding-left: 0;
+  }
+
+  .callout {
+    margin-top: 10px;
+  }
+
+  .callout h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+  }
+
   .align-middle {
     .columns {
       padding-bottom: .5rem;
       padding-top: .5rem;
     }
+  }
+
+  .has-overlay {
+    position: relative;
+  }
+
+  .overlay {
+    background-color: $white;
+    height: 100%;
+    opacity: .8;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .beer-icon-container {
+    background-color: $gray-light;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 75px;
+    padding: 10px;
+    width: 75px;
+  }
+
+  .selected-problems {
+    background-color: $bad-color;
+  }
+
+  .beer-icon-container.selected {
+    background-color: $active-color;
+  }
+
+  .beer-icon-container .beer-icon {
+    left: 4px;
+    position: relative;
+    top: 3px;
+  }
+
+  .beer-icon-container .beer-icon.move-down {
+    top: 8px;
+  }
+
+  .beer-icon-container .beer-icon.move-up {
+    top: 0;
   }
 
   .good-beer {
