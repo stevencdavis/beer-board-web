@@ -82,6 +82,8 @@ global.paths = {
     'base': 'fonts/fontawesome'
   }],
 
+  'assets_images': ['./src/assets/images/*'],
+
   // Build folder (for Sass and templates compilation)
   'build': './src/build',
 

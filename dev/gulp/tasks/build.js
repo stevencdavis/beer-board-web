@@ -28,6 +28,7 @@ gulp.task('build:production', function (done) {
      'modernizr',
      'jscpd:ts'],
     ['assets_jspm:production',
+     'assets_images:production',
      'scss:production',
      'nunjucks:production',
      'templates:production',

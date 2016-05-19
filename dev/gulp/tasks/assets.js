@@ -17,3 +17,8 @@ gulp.task('assets_jspm:production', function() {
       .pipe(gulp.dest(global.paths.dist + '/assets/' + global.paths.assets_jspm[assetIndex].base));
   }
 });
+
+gulp.task('assets_images:production', function() {
+  gulp.src(global.paths.assets_images)
+    .pipe(gulp.dest(global.paths.dist + '/assets/images/'));
+});
