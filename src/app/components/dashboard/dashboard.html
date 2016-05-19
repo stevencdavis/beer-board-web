@@ -1,12 +1,12 @@
 <div class="top-bar black">
   <ul class="menu align-justify">
-    <li class="menu-text"><a ui-sref="home">we { drink at } work</a></li>
-    <li class="menu-text white"><h6>Drink what you love</h6></li>
+    <li class="menu-text page-title"><a ui-sref="home">we { drink at } work</a></li>
+    <li class="menu-text page-subtitle"><h6>Drink what you love</h6></li>
   </ul>
 </div>
 
 <div class="row columns">
-  <div class="callout small primary">
+  <div class="small-12 medium-6 columns callout small primary text-center">
     <div class="row column">
       <h1>Beer Board</h1>
     </div>
@@ -15,7 +15,7 @@
 
 <div class="row">
 
-  <div class="small-12 medium-6 columns">
+  <div class="small-12 medium-6 columns small-order-2 medium-order-1">
 
     <div class="row border-bottom"
          ng-class="{'good-beer': beer.status === 'good' && beer.type && vm.isRecent(beer.modified)}"
@@ -90,92 +90,155 @@
       </div>
 
       <!-- Status -->
-      <div class="small-4 columns align-middle">
-        <div class="switch tiny">
-          <input class="switch-input"
-                 type="radio"
-                 id="good-{{ beer.floor }}"
-                 name="status-{{ beer.floor }}"
-                 ng-model="beer.status"
-                 value="good"
-                 ng-change="vm.clearProblems(beer)">
-          <label class="switch-paddle float-center" for="good-{{ beer.floor }}">
-          </label>
+      <!-- Status: Good -->
+      <div class="small-4 columns align-middle text-center has-overlay">
+        <div ng-class="{'overlay': !beer.type}"></div>
+        <!--<div class="switch tiny">-->
+          <!--<input class="switch-input"-->
+                 <!--type="radio"-->
+                 <!--id="good-{{ beer.floor }}"-->
+                 <!--name="status-{{ beer.floor }}"-->
+                 <!--ng-model="beer.status"-->
+                 <!--value="good"-->
+                 <!--ng-change="vm.clearProblems(beer)">-->
+          <!--<label class="switch-paddle float-center" for="good-{{ beer.floor }}">-->
+          <!--</label>-->
+        <!--</div>-->
+
+        <div class="beer-icon-container"
+             ng-class="{'selected': beer.status === 'good' && beer.type}"
+             ng-click="beer.status = 'good'; vm.clearProblems(beer)">
+          <img src="assets/images/beer-happy.svg"
+               class="beer-icon"/>
         </div>
+        <div>Good!</div>
       </div>
-      <div class="small-4 columns align-middle">
-        <div class="switch tiny">
-          <input class="switch-input"
-                 type="radio"
-                 id="empty-{{ beer.floor }}"
-                 name="status-{{ beer.floor }}"
-                 ng-model="beer.status"
-                 value="empty"
-                 ng-change="vm.clearProblems(beer)">
-          <label class="switch-paddle float-center" for="empty-{{ beer.floor }}">
-          </label>
+      <!-- Status: Empty -->
+      <div class="small-4 columns align-middle text-center has-overlay">
+        <div ng-class="{'overlay': !beer.type}"></div>
+        <!--<div class="switch tiny">-->
+          <!--<input class="switch-input"-->
+                 <!--type="radio"-->
+                 <!--id="empty-{{ beer.floor }}"-->
+                 <!--name="status-{{ beer.floor }}"-->
+                 <!--ng-model="beer.status"-->
+                 <!--value="empty"-->
+                 <!--ng-change="vm.clearProblems(beer)">-->
+          <!--<label class="switch-paddle float-center" for="empty-{{ beer.floor }}">-->
+          <!--</label>-->
+        <!--</div>-->
+
+        <div class="beer-icon-container"
+             ng-class="{'selected': beer.status === 'empty' && beer.type}"
+             ng-click="beer.status = 'empty'; vm.clearProblems(beer)">
+          <img src="assets/images/beer-empty.svg"
+               class="beer-icon move-down"/>
         </div>
+        <div>Empty</div>
       </div>
-      <div class="small-4 columns align-middle">
-        <div class="switch tiny">
-          <input class="switch-input"
-                 type="radio"
-                 id="problem-{{ beer.floor }}"
-                 name="status-{{ beer.floor }}"
-                 ng-model="beer.status"
-                 value="problems">
-          <label class="switch-paddle float-center" for="problem-{{ beer.floor }}"></label>
+      <!-- Status: Problems -->
+      <div class="small-4 columns align-middle text-center has-overlay"
+           ng-class="{'selected-problems': beer.status === 'problems' && beer.type}">
+        <div ng-class="{'overlay': !beer.type}"></div>
+        <!--<div class="switch tiny">-->
+          <!--<input class="switch-input"-->
+                 <!--type="radio"-->
+                 <!--id="problem-{{ beer.floor }}"-->
+                 <!--name="status-{{ beer.floor }}"-->
+                 <!--ng-model="beer.status"-->
+                 <!--value="problems">-->
+          <!--<label class="switch-paddle float-center" for="problem-{{ beer.floor }}"></label>-->
+        <!--</div>-->
+
+        <div class="beer-icon-container"
+             ng-class="{'selected': beer.status === 'problems' && beer.type}"
+             ng-click="beer.status = 'problems'">
+          <img src="assets/images/beer-issues.svg"
+               class="beer-icon move-down"/>
         </div>
+        <div>Problems</div>
       </div>
 
       <!-- Problems -->
-      <div ng-if="beer.status === 'problems'" class="small-3 columns align-middle">
-        <div class="switch tiny">
-          <input class="switch-input"
-                 type="checkbox"
-                 id="problem-foamy-{{ beer.floor }}"
-                 name="problem-foamy-{{ beer.floor }}"
-                 ng-model="beer.foamy"
-                 ng-change="vm.updateStatus(beer)">
-          <label class="switch-paddle float-center" for="problem-foamy-{{ beer.floor }}">
-          </label>
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+        <!--<div class="switch tiny">-->
+          <!--<input class="switch-input"-->
+                 <!--type="checkbox"-->
+                 <!--id="problem-foamy-{{ beer.floor }}"-->
+                 <!--name="problem-foamy-{{ beer.floor }}"-->
+                 <!--ng-model="beer.foamy"-->
+                 <!--ng-change="vm.updateStatus(beer)">-->
+          <!--<label class="switch-paddle float-center" for="problem-foamy-{{ beer.floor }}">-->
+          <!--</label>-->
+        <!--</div>-->
+
+        <div class="beer-icon-container"
+             ng-class="{'selected': beer.foamy}"
+             ng-click="beer.foamy = !beer.foamy; vm.updateStatus(beer)">
+          <img src="assets/images/beer-foamy.svg"
+               class="beer-icon"/>
         </div>
+        <div>Foamy</div>
       </div>
-      <div ng-if="beer.status === 'problems'" class="small-3 columns align-middle">
-        <div class="switch tiny">
-          <input class="switch-input"
-                 type="checkbox"
-                 id="problem-flat-{{ beer.floor }}"
-                 name="problem-flat-{{ beer.floor }}"
-                 ng-model="beer.flat"
-                 ng-change="vm.updateStatus(beer)">
-          <label class="switch-paddle float-center" for="problem-flat-{{ beer.floor }}">
-          </label>
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+        <!--<div class="switch tiny">-->
+          <!--<input class="switch-input"-->
+                 <!--type="checkbox"-->
+                 <!--id="problem-flat-{{ beer.floor }}"-->
+                 <!--name="problem-flat-{{ beer.floor }}"-->
+                 <!--ng-model="beer.flat"-->
+                 <!--ng-change="vm.updateStatus(beer)">-->
+          <!--<label class="switch-paddle float-center" for="problem-flat-{{ beer.floor }}">-->
+          <!--</label>-->
+        <!--</div>-->
+
+        <div class="beer-icon-container"
+             ng-class="{'selected': beer.flat}"
+             ng-click="beer.flat = !beer.flat; vm.updateStatus(beer)">
+          <img src="assets/images/beer-flat.svg"
+               class="beer-icon move-down"/>
         </div>
+        <div>Flat</div>
       </div>
-      <div ng-if="beer.status === 'problems'" class="small-3 columns align-middle">
-        <div class="switch tiny">
-          <input class="switch-input"
-                 type="checkbox"
-                 id="problem-warm-{{ beer.floor }}"
-                 name="problem-warm-{{ beer.floor }}"
-                 ng-model="beer.warm"
-                 ng-change="vm.updateStatus(beer)">
-          <label class="switch-paddle float-center" for="problem-warm-{{ beer.floor }}">
-          </label>
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+        <!--<div class="switch tiny">-->
+          <!--<input class="switch-input"-->
+                 <!--type="checkbox"-->
+                 <!--id="problem-warm-{{ beer.floor }}"-->
+                 <!--name="problem-warm-{{ beer.floor }}"-->
+                 <!--ng-model="beer.warm"-->
+                 <!--ng-change="vm.updateStatus(beer)">-->
+          <!--<label class="switch-paddle float-center" for="problem-warm-{{ beer.floor }}">-->
+          <!--</label>-->
+        <!--</div>-->
+
+        <div class="beer-icon-container"
+             ng-class="{'selected': beer.warm}"
+             ng-click="beer.warm = !beer.warm; vm.updateStatus(beer)">
+          <img src="assets/images/beer-hot.svg"
+               class="beer-icon move-up"/>
         </div>
+        <div>Warm</div>
       </div>
-      <div ng-if="beer.status === 'problems'" class="small-3 columns align-middle">
-        <div class="switch tiny">
-          <input class="switch-input"
-                 type="checkbox"
-                 id="problem-slow-{{ beer.floor }}"
-                 name="problem-slow-{{ beer.floor }}"
-                 ng-model="beer.slow"
-                 ng-change="vm.updateStatus(beer)">
-          <label class="switch-paddle float-center" for="problem-slow-{{ beer.floor }}">
-          </label>
+      <div ng-if="beer.status === 'problems' && beer.type" class="small-3 columns align-middle text-center selected-problems">
+        <!--<div class="switch tiny">-->
+          <!--<input class="switch-input"-->
+                 <!--type="checkbox"-->
+                 <!--id="problem-slow-{{ beer.floor }}"-->
+                 <!--name="problem-slow-{{ beer.floor }}"-->
+                 <!--ng-model="beer.slow"-->
+                 <!--ng-change="vm.updateStatus(beer)">-->
+          <!--<label class="switch-paddle float-center" for="problem-slow-{{ beer.floor }}">-->
+          <!--</label>-->
+        <!--</div>-->
+
+        <div class="beer-icon-container"
+             ng-class="{'selected': beer.slow}"
+             ng-click="beer.slow = !beer.slow; vm.updateStatus(beer)">
+          <img src="assets/images/beer-slow.svg"
+               class="beer-icon"/>
         </div>
+        <div>Slow</div>
       </div>
 
 
@@ -189,12 +252,12 @@
     </div>
   </div>
 
-  <div class="medium-offset-1 medium-5 columns">
+  <div class="medium-offset-1 medium-5 columns small-order-1 medium-order-2">
     <div class="row columns align-middle">
       <div class="row">
         <div class="columns align-middle">
           <h5>Best bets</h5>
-          <hr />
+          <hr/>
         </div>
       </div>
       <div class="row" ng-repeat="beer in vm.getBestBets()">
@@ -210,6 +273,10 @@
           </ng-pluralize>
         </div>
       </div>
+      <div ng-if="vm.getBestBets().length === 0">
+        No beers have been recently marked as good!
+      </div>
+      <hr/>
     </div>
   </div>
 
