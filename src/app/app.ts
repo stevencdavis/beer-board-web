@@ -19,12 +19,11 @@ import 'restangular';
 import 'foundation-apps/dist/js/foundation-apps';
 import 'foundation-apps/dist/js/foundation-apps-templates';
 import 'foundation-apps/js/angular/components/panel/panel';
-import 'foundation-apps/js/angular/components/iconic/iconic';
-
-import * as IconicJS from 'foundation-apps/js/vendor/iconic.min';
-console.debug(IconicJS.default);
+// import 'foundation-apps/js/angular/components/iconic/iconic';
+// import * as IconicJS from 'foundation-apps/js/vendor/iconic.min';
+// console.debug(IconicJS.default);
 // Make IconicJS global (window)
-window['IconicJS'] = IconicJS.default;
+// window['IconicJS'] = IconicJS.default;
 
 import Foundation from 'foundation-sites/dist/foundation';
 console.debug('Foundation', Foundation.Foundation);
