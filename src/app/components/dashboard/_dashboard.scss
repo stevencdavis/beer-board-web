@@ -1,5 +1,10 @@
 @include exports(dashboard) {
 
+  // Remove gray color for links on mobile safari
+  a {
+    -webkit-tap-highlight-color: $black;
+  }
+
   h5 {
     margin-bottom: 0;
   }
@@ -210,6 +215,7 @@
   }
 
   input[type='text'] {
+    -webkit-text-fill-color: $black;
     box-shadow: none;
     color: $black;
     font-size: 1.3rem;
@@ -222,6 +228,7 @@
     &:disabled {
       background: none;
       border: 0;
+      opacity: 1;
     }
 
     &:disabled.clickable {
