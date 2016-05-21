@@ -1,7 +1,14 @@
 @include exports(dashboard) {
 
-  h6 {
+  h5 {
     margin-bottom: 0;
+  }
+
+  h6 {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
   }
 
   table {
@@ -13,6 +20,10 @@
     }
   }
 
+  .dark {
+    background-color: $header-color;
+  }
+
   .row {
     .row {
       .no-margin-hr {
@@ -21,8 +32,13 @@
       }
     }
 
+    &.border-top {
+      border-top: 1px solid $gray;
+    }
+
     &.border-bottom {
       border-bottom: 1px solid $gray;
+      padding-bottom: 22px;
     }
   }
 
@@ -35,6 +51,12 @@
 
   .page-title {
     font-family: 'Cantata One', serif;
+    font-weight: bold;
+    padding: 10px 0 5px;
+  }
+
+  .show-for-medium .page-title {
+    padding: 20px;
   }
 
   .page-title a {
@@ -44,7 +66,15 @@
   .page-subtitle {
     color: $white;
     font-family: 'Open Sans Condensed', sans-serif;
-    padding-left: 0;
+    padding: 5px 0 10px;
+  }
+
+  .page-subtitle h5 {
+    font-size: .9rem;
+  }
+
+  .show-for-medium .page-subtitle {
+    padding: 20px;
   }
 
   .callout {
@@ -109,8 +139,40 @@
     background-color: lighten($success-color, 40%);
   }
 
-  .selected-problems {
+  .selected-good {
+    background-color: $success-color;
+  }
+
+  .selected-empty {
+    background-color: $warning-color;
+  }
+
+  .selected-issues {
+    background-color: $alert-color;
+  }
+
+  .selected-issues-background {
     background-color: $bad-color;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .arrow-left {
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid $primary-color;
+    border-top: 20px solid transparent;
+    height: 0;
+    margin-top: 8px;
+    width: 0;
+  }
+
+  .arrow-up {
+    border-bottom: 15px solid $bad-color;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    height: 0;
+    margin-bottom: -8px;
+    width: 0;
   }
 
   .inline-label {
@@ -133,6 +195,8 @@
 
   input[type='text'] {
     box-shadow: none;
+    font-size: 1.3rem;
+    font-weight: bold;
     margin-bottom: 0;
 
     &:disabled {
@@ -171,6 +235,17 @@
 
   .fill-width {
     width: 100%;
+  }
+
+  .edit-button {
+    height: 40px;
+    width: 73%;
+  }
+
+  .best-bets-title {
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
   }
 
   .age-1 {
@@ -218,17 +293,23 @@
 
   .animate-if.ng-enter,
   .animate-if.ng-leave {
+    display: block;
+    position: relative;
     transition: all cubic-bezier(.25, .46, .45, .94) .5s;
   }
 
   .animate-if.ng-enter,
   .animate-if.ng-leave.ng-leave-active {
     opacity: 0;
+    top: -50px;
+    //height: 0px;
   }
 
   .animate-if.ng-leave,
   .animate-if.ng-enter.ng-enter-active {
     opacity: 1;
+    top: 0;
+    //height: 30px;
   }
 }
 
