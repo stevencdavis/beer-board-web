@@ -25,6 +25,10 @@
     }
   }
 
+  hr {
+    color: $gray;
+  }
+
   .dark {
     background-color: $header-color;
   }
@@ -313,7 +317,11 @@
     width: 73%;
   }
 
-  .best-bets-title {
+  .best-bets {
+    background-color: $gray-light;
+  }
+
+  .best-bests .best-bets-title {
     font-weight: bold;
     margin-bottom: 0;
     text-transform: uppercase;

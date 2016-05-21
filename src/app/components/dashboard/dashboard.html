@@ -220,11 +220,11 @@
   </div>
 
   <!-- Best bets -->
-  <div class="medium-offset-1 medium-5 columns small-order-1 medium-order-2">
-    <div class="row columns align-middle">
+  <div class="show-for-small-only medium-offset-1 medium-5 columns small-order-1 medium-order-2 best-bets">
+    <div class="row columns align-middle border-top">
       <div class="row">
         <div class="columns align-middle">
-          <hr/>
+          <!--<hr/>-->
           <h5 class="show-for-small-only subheader best-bets-title text-center">Best bets</h5>
           <h5 class="show-for-medium subheader best-bets-title">Best bets</h5>
         </div>
@@ -245,7 +245,38 @@
       <div ng-if="vm.getBestBets().length === 0">
         No beers have been recently marked as good!
       </div>
-      <hr class="show-for-medium"/>
+      <br />
+    </div>
+  </div>
+
+
+  <!-- Best bets -->
+  <div class="show-for-medium medium-offset-1 medium-5 columns small-order-1 medium-order-2">
+    <div class="row columns align-middle border-top">
+      <div class="row">
+        <div class="columns align-middle">
+          <!--<hr/>-->
+          <h5 class="show-for-small-only subheader best-bets-title text-center">Best bets</h5>
+          <h5 class="show-for-medium subheader best-bets-title">Best bets</h5>
+        </div>
+      </div>
+      <div class="row" ng-repeat="beer in vm.getBestBets()">
+        <div class="medium-8 columns align-middle">
+          {{ beer.type }}
+        </div>
+        <div class="medium-4 columns align-middle text-right">
+          <ng-pluralize count="beer.floor"
+                        when="{'1': '1st floor',
+                               '2': '2nd floor',
+                               '3': '3rd floor',
+                               'other': '{}th floor'}">
+          </ng-pluralize>
+        </div>
+      </div>
+      <div ng-if="vm.getBestBets().length === 0">
+        No beers have been recently marked as good!
+      </div>
+      <hr />
       <br />
     </div>
   </div>
