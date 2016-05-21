@@ -51,7 +51,6 @@ export class Dashboard {
 
   updateType(beer) {
     console.debug('beer type changed!', beer.type);
-    this.save(beer);
   }
 
   updateStatus(beer) {
@@ -79,6 +78,10 @@ export class Dashboard {
 
   saveChanges(beer) {
     this.toggleEditMode(beer);
+    _.forEach(this.problems, (problem) => {
+      beer[problem] = false;
+    });
+    beer.status = 'good';
     this.save(beer);
   }
 

@@ -117,6 +117,18 @@
     width: 75px;
   }
 
+  .beer-icon-container.problem-type {
+    height: 65px;
+    width: 65px;
+  }
+
+
+  .beer-icon-container.problem-type img {
+    height: 90%;
+    left: 3px;
+    top: 1px;
+  }
+
   .beer-icon-container.selected {
     background-color: $active-color;
   }
@@ -125,6 +137,10 @@
     left: 4px;
     position: relative;
     top: 3px;
+  }
+
+  .beer-icon-container.problem-type .beer-icon.move-down {
+    height: 70%;
   }
 
   .beer-icon-container .beer-icon.move-down {
@@ -194,10 +210,14 @@
   }
 
   input[type='text'] {
+    color: $black;
     box-shadow: none;
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:disabled {
       background: none;
@@ -222,6 +242,28 @@
       margin-left: auto;
       margin-right: auto;
     }
+  }
+
+  .edit-type {
+    position: relative;
+  }
+
+  .edit-type .clear {
+    position: absolute;
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    top: 17px;
+    right: 11px;
+    color: white;
+    font-weight: bold;
+    line-height: .9;
+    font-family: sans-serif;
+    font-size: 1.2rem;
   }
 
   .underline {
