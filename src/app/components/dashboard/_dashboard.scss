@@ -225,9 +225,9 @@
     font-weight: bold;
     margin-bottom: 0;
     overflow: hidden;
+    padding-right: 35px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding-right: 35px;
 
     &:disabled {
       background: none;
@@ -322,8 +322,7 @@
     background-color: $gray-light;
   }
 
-  .best-bests .best-bets-title {
-    font-weight: bold;
+  .best-bets-title {
     margin-bottom: 0;
     text-transform: uppercase;
   }
