@@ -230,10 +230,10 @@
         </div>
       </div>
       <div class="row" ng-repeat="beer in vm.getBestBets()">
-        <div class="medium-8 columns align-middle">
+        <div class="small-8 columns align-middle">
           {{ beer.type }}
         </div>
-        <div class="medium-4 columns align-middle text-right">
+        <div class="small-4 columns align-middle text-right">
           <ng-pluralize count="beer.floor"
                         when="{'1': '1st floor',
                                '2': '2nd floor',
@@ -249,7 +249,6 @@
     </div>
   </div>
 
-
   <!-- Best bets -->
   <div class="show-for-medium medium-offset-1 medium-5 columns small-order-1 medium-order-2">
     <div class="row columns align-middle border-top">
@@ -261,10 +260,10 @@
         </div>
       </div>
       <div class="row" ng-repeat="beer in vm.getBestBets()">
-        <div class="medium-8 columns align-middle">
+        <div class="small-8 columns align-middle">
           {{ beer.type }}
         </div>
-        <div class="medium-4 columns align-middle text-right">
+        <div class="small-4 columns align-middle text-right">
           <ng-pluralize count="beer.floor"
                         when="{'1': '1st floor',
                                '2': '2nd floor',
