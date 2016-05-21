@@ -127,7 +127,6 @@
     width: 65px;
   }
 
-
   .beer-icon-container.problem-type img {
     height: 90%;
     left: 3px;
@@ -240,6 +239,29 @@
     }
   }
 
+  // Placeholder styles (must use Vendor prefixes)
+  input[type='text'].placeholder {
+    &::-webkit-input-placeholder {
+      -webkit-text-fill-color: $gray-6;
+      color: $gray-6;
+    }
+
+    &:-moz-placeholder { // Firefox 18-
+      -webkit-text-fill-color: $gray-6;
+      color: $gray-6;
+    }
+
+    &::-moz-placeholder {  // Firefox 19+
+      -webkit-text-fill-color: $gray-6;
+      color: $gray-6;
+    }
+
+    &:-ms-input-placeholder {
+      -webkit-text-fill-color: $gray-6;
+      color: $gray-6;
+    }
+  }
+
   input[type='checkbox'] + label,
   input[type='radio'] + label {
     margin: 0;
@@ -328,7 +350,6 @@
   .age-8 {
     color: $gray-8;
   }
-
 
   // Animations
 

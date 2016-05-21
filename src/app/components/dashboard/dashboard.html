@@ -79,7 +79,8 @@
                    set-focus="beer.isEditMode"
                    ng-disabled="!beer.isEditMode"
                    class="underline"
-                   ng-class="{'clickable': (beer.type && !beer.isEditMode)}"
+                   ng-class="{'clickable': (beer.type && !beer.isEditMode),
+                              'placeholder': !beer.type}"
                    ng-change="vm.updateType(beer)">
             <span ng-if="beer.isEditMode" class="clear" ng-click="beer.type = ''">x</span>
           </div>
@@ -111,7 +112,8 @@
                    placeholder="{{ beer.isEditMode ? 'enter beer' : 'no beer'}}"
                    set-focus="beer.isEditMode"
                    ng-disabled="!beer.isEditMode"
-                   ng-class="{'clickable': (beer.type && !beer.isEditMode)}"
+                   ng-class="{'clickable': (beer.type && !beer.isEditMode),
+                              'placeholder': !beer.type}"
                    ng-change="vm.updateType(beer)">
             <span ng-if="beer.isEditMode" class="clear" ng-click="beer.type = ''">x</span>
           </div>
