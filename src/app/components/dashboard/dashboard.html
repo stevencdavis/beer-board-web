@@ -78,7 +78,6 @@
                    placeholder="{{ beer.isEditMode ? 'enter beer' : 'no beer'}}"
                    set-focus="beer.isEditMode"
                    ng-disabled="!beer.isEditMode"
-                   class="underline"
                    ng-class="{'clickable': (beer.type && !beer.isEditMode),
                               'placeholder': !beer.type}"
                    ng-change="vm.updateType(beer)">
@@ -89,7 +88,7 @@
             <a ng-href="https://untappd.com/search?q={{beer.type}}">
               <span data-tooltip
                     aria-haspopup="{{ beer.type }}"
-                    class="has-tip top external-link"
+                    class="fill-width has-tip top external-link"
                     data-disable-hover="{{ !beer.type }}"
                     tabindex="2"
                     title="View on Untappd!">
