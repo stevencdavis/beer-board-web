@@ -1,0 +1,19 @@
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.wrapper .push-footer {
+  height: 4em;
+}
+
+footer {
+  height: 4em;
+  color: $white;
+}
+
+footer .footer-text {
+  height: 4em;
+}
