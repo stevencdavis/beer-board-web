@@ -167,20 +167,20 @@
     top: 0;
   }
 
-  .good-beer {
-    background-color: lighten($success-color, 40%);
-  }
+  //.good-beer {
+  //  background-color: lighten($success-color, 40%);
+  //}
 
   .selected-good {
-    background-color: $success-color;
+    background-color: $color-good;
   }
 
   .selected-empty {
-    background-color: $warning-color;
+    background-color: $color-empty;
   }
 
   .selected-issues {
-    background-color: $alert-color;
+    background-color: $color-issues;
   }
 
   .selected-issues-background {
