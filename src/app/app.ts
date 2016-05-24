@@ -56,7 +56,7 @@ let app = angular.module('app', [
 
     //foundation
     'foundation',
-    'foundation.iconic',
+    // 'foundation.iconic',
     'foundation.dynamicRouting',
     'foundation.dynamicRouting.animations',
 
