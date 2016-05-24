@@ -10,7 +10,7 @@ gulp.task('default', function (done) {
     ['build:development', 'webdriver_update'],
     [//'webdriver_standalone',
       'serve',
-      'karma:tdd',
+      //'karma:tdd',
       'protractor'],
     done);
 });
