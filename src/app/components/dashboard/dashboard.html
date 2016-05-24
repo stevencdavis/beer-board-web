@@ -47,7 +47,7 @@
       <div class="small-8 columns align-middle">
         <div class="fill-width">
           <!--<h6 class="text-right"-->
-              <!--ng-class="vm.getAgeCategory(beer.modified)">Updated: {{ vm.dateToTimeAgo(beer.modified) }}</h6>-->
+          <!--ng-class="vm.getAgeCategory(beer.modified)">Updated: {{ vm.dateToTimeAgo(beer.modified) }}</h6>-->
           <h6 class="text-right subheader">Updated: {{ vm.dateToTimeAgo(beer.modified) }}</h6>
         </div>
       </div>
@@ -71,7 +71,8 @@
             </a>
           </div>
           <!-- small: editing -->
-          <div ng-if="!beer.type || beer.isEditMode" class="show-for-small-only columns align-middle no-padding-hr edit-type">
+          <div ng-if="!beer.type || beer.isEditMode"
+               class="show-for-small-only columns align-middle no-padding-hr edit-type">
             <input type="text"
                    id="type"
                    ng-model="beer.type"
@@ -104,7 +105,8 @@
             </a>
           </div>
           <!-- medium: editing -->
-          <div ng-if="!beer.type || beer.isEditMode" class="show-for-medium columns align-middle no-padding-hr edit-type">
+          <div ng-if="!beer.type || beer.isEditMode"
+               class="show-for-medium columns align-middle no-padding-hr edit-type">
             <input type="text"
                    id="type"
                    ng-model="beer.type"
@@ -120,7 +122,10 @@
           <!-- Edit / Save button -->
           <div class="small-3 columns align-middle no-padding-hr">
             <div ng-if="!beer.isEditMode" class="fill-width">
-              <button type="button" class="button edit-button float-right" ng-click="vm.toggleEditMode(beer)">Edit</button>
+              <button type="button"
+                      class="button edit-button float-right"
+                      ng-click="vm.toggleEditMode(beer)">Edit
+              </button>
               <div class="arrow-left float-right"></div>
             </div>
             <div ng-if="beer.isEditMode" class="fill-width">
@@ -138,7 +143,7 @@
              ng-class="{'selected-good': beer.status === 'good' && beer.type}"
              ng-click="beer.status = 'good'; vm.clearProblems(beer)">
           <img src="assets/images/beer-happy.svg"
-               class="beer-icon"/>
+               class="beer-icon" />
         </div>
         <div>Good!</div>
       </div>
@@ -149,7 +154,7 @@
              ng-class="{'selected-empty': beer.status === 'empty' && beer.type}"
              ng-click="beer.status = 'empty'; vm.clearProblems(beer)">
           <img src="assets/images/beer-empty.svg"
-               class="beer-icon move-down"/>
+               class="beer-icon move-down" />
         </div>
         <div>Empty</div>
       </div>
@@ -160,7 +165,7 @@
              ng-class="{'selected-issues': beer.status === 'problems' && beer.type}"
              ng-click="beer.status = 'problems'">
           <img src="assets/images/beer-issues.svg"
-               class="beer-icon move-down"/>
+               class="beer-icon move-down" />
         </div>
         <div>Issues</div>
         <div ng-if="beer.status === 'problems' && beer.type" class="arrow-up float-center"></div>
@@ -173,7 +178,7 @@
              ng-class="{'selected-issues': beer.foamy}"
              ng-click="beer.foamy = !beer.foamy; vm.updateStatus(beer)">
           <img src="assets/images/beer-foamy.svg"
-               class="beer-icon"/>
+               class="beer-icon" />
         </div>
         <div>Foamy</div>
       </div>
@@ -183,7 +188,7 @@
              ng-class="{'selected-issues': beer.flat}"
              ng-click="beer.flat = !beer.flat; vm.updateStatus(beer)">
           <img src="assets/images/beer-flat.svg"
-               class="beer-icon move-down"/>
+               class="beer-icon move-down" />
         </div>
         <div>Flat</div>
       </div>
@@ -193,7 +198,7 @@
              ng-class="{'selected-issues': beer.warm}"
              ng-click="beer.warm = !beer.warm; vm.updateStatus(beer)">
           <img src="assets/images/beer-hot.svg"
-               class="beer-icon move-up"/>
+               class="beer-icon move-up" />
         </div>
         <div>Warm</div>
       </div>
@@ -203,7 +208,7 @@
              ng-class="{'selected-issues': beer.slow}"
              ng-click="beer.slow = !beer.slow; vm.updateStatus(beer)">
           <img src="assets/images/beer-slow.svg"
-               class="beer-icon"/>
+               class="beer-icon" />
         </div>
         <div>Slow</div>
       </div>
@@ -274,6 +279,9 @@
       </div>
       <hr />
       <br />
+      <p>Sick of traveling the far reaches of NOMAD for your favorite beer, only to find a warm, flat, or empty keg?
+         Us too! That's why we created this crowd-sourced Beer Board! Help keep the board updated as you journey from floor to floor seeking out the perfect beer. Cheers!</p>
+      <p><em>&mdash; The Signafire Team</em></p>
     </div>
   </div>
 
