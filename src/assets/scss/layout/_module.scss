@@ -1,8 +1,8 @@
 .wrapper {
-  min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -9em;
+  min-height: 100%;
 }
 
 .wrapper .push-footer {
@@ -10,14 +10,14 @@
 }
 
 footer {
+  color: $white;
   font-family: 'Montserrat', sans-serif;
   height: 9em;
-  color: $white;
 }
 
 footer .footer-text.align-middle {
-  padding-top: 27px;
   height: 9em;
+  padding-top: 27px;
 }
 
 footer .footer-text.align-middle > span {
