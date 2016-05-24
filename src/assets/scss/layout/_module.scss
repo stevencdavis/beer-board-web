@@ -1,0 +1,31 @@
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -9em;
+}
+
+.wrapper .push-footer {
+  height: 9em;
+}
+
+footer {
+  font-family: 'Montserrat', sans-serif;
+  height: 9em;
+  color: $white;
+}
+
+footer .footer-text.align-middle {
+  padding-top: 27px;
+  height: 9em;
+}
+
+footer .footer-text.align-middle > span {
+  font-size: 1.5rem;
+  margin-top: 2px;
+}
+
+footer .footer-text.align-middle > img {
+  height: 65px;
+  margin-top: -4px;
+}

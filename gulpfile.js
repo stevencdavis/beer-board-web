@@ -84,6 +84,8 @@ global.paths = {
 
   'assets_images': ['./src/assets/images/*'],
 
+  'assets_favicons': ['./src/assets/images/favicons/*'],
+
   // Build folder (for Sass and templates compilation)
   'build': './src/build',
 
