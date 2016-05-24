@@ -39,7 +39,7 @@
     <div class="small-12 columns text-center align-middle">
       <div class="footer-text align-middle">
         <span>Cheers! from </span>
-        <img src="assets/images/signafire-logo-light.svg"/>
+        <a href="http://www.signafire.com" target="_blank"><img src="assets/images/signafire-logo-light.svg"/></a>
       </div>
     </div>
   </div>
