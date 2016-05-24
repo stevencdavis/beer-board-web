@@ -68,19 +68,22 @@ global.paths = {
   // CSS folders
   'css': {
     'build': './src/build/css',
-    'dist': './dist/css'
+    'dist':  './dist/css'
   },
 
   // Third-party assets
-  'assets_jspm': [{
-    'package': 'foundation-apps'//,
-    // 'src': 'iconic/**/*.svg',
-    // 'base': 'img/iconic'
-  },{
-    'package': 'fontawesome',
-    'src': 'fonts/**/fontawesome-*',
-    'base': 'fonts/fontawesome'
-  }],
+  'assets_jspm': [
+    // {
+    //   'package': 'foundation-apps',
+    //   'src':     'iconic/**/*.svg',
+    //   'base':    'img/iconic'
+    // },
+    {
+      'package': 'fontawesome'//,
+      'src':     'fonts/**/fontawesome-*',
+      'base':    'fonts/fontawesome'
+    }
+  ],
 
   'assets_images': ['./src/assets/images/*'],
 
@@ -99,15 +102,15 @@ global.paths = {
 // Configs that refer to individual files
 global.config = {
   'bundle_entry_point': './src/build/app/app.js',
-  'scss_main': './src/assets/scss/main.scss',
-  'css_file': {
-    'dev': './build/css/app.css',
+  'scss_main':          './src/assets/scss/main.scss',
+  'css_file':           {
+    'dev':  './build/css/app.css',
     'dist': './css/app.min.css'
   },
-  'tsd_config': './tsd.json',
-  'manifest_file': global.paths.dist + '/rev-manifest.json',
-  'coverage_file': global.paths.coverage + '/coverage-final.json'
+  'tsd_config':         './tsd.json',
+  'manifest_file':      global.paths.dist + '/rev-manifest.json',
+  'coverage_file':      global.paths.coverage + '/coverage-final.json'
 };
 
 // Require all tasks in the 'gulp' folder.
-requireDir('./dev/gulp/tasks', { recurse: false });
+requireDir('./dev/gulp/tasks', {recurse: false});
