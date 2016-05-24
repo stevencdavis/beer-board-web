@@ -26,7 +26,7 @@ import 'foundation-apps/js/angular/components/panel/panel';
 // window['IconicJS'] = IconicJS.default;
 
 import Foundation from 'foundation-sites/dist/foundation';
-console.debug('Foundation', Foundation.Foundation);
+// console.debug('Foundation', Foundation.Foundation);
 // Make Foundation global (window)
 window['Foundation'] = Foundation.Foundation;
 
@@ -78,4 +78,4 @@ angular.element(document).ready(function () {
 
 
 let foo = new Foo();
-console.debug(foo.doSomething());
+// console.debug(foo.doSomething());

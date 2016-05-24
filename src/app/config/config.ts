@@ -6,8 +6,9 @@ let configModule = angular
     authPort: '8090',
     dataPort: '8090'
   })
-  .constant('PATH_CONFIG', {
-    iconic: 'build/assets/img/iconic'
-  });
+  // .constant('PATH_CONFIG', {
+  //   iconic: 'build/assets/img/iconic'
+  // })
+  ;
 
 export default configModule;

@@ -73,9 +73,9 @@ global.paths = {
 
   // Third-party assets
   'assets_jspm': [{
-    'package': 'foundation-apps',
-    'src': 'iconic/**/*.svg',
-    'base': 'img/iconic'
+    'package': 'foundation-apps'//,
+    // 'src': 'iconic/**/*.svg',
+    // 'base': 'img/iconic'
   },{
     'package': 'fontawesome',
     'src': 'fonts/**/fontawesome-*',

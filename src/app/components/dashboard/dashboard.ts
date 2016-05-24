@@ -25,7 +25,7 @@ export class Dashboard {
   getData() {
     this.beersResource.getList()
       .then((beers) => {
-        console.log('result:', beers.plain());
+        // console.log('result:', beers.plain());
         this.beers = beers;
 
         // Transform results from database
@@ -42,7 +42,7 @@ export class Dashboard {
         this.updateBestBets();
 
         this.timeout(function () {
-          console.debug("initializing foundation!");
+          // console.debug("initializing foundation!");
           $(document).foundation();
         }, 0, false);
 
@@ -50,11 +50,11 @@ export class Dashboard {
   }
 
   updateType(beer) {
-    console.debug('beer type changed!', beer.type);
+    // console.debug('beer type changed!', beer.type);
   }
 
   updateStatus(beer) {
-    console.debug('beer status changed!', beer);
+    // console.debug('beer status changed!', beer);
 
     beer.status = _.some(this.problems, (problem:string) => {
       return beer[problem];
@@ -72,7 +72,7 @@ export class Dashboard {
   }
 
   toggleEditMode(beer) {
-    console.debug('editing:', beer);
+    // console.debug('editing:', beer);
     beer.isEditMode = !beer.isEditMode;
   }
 
@@ -88,7 +88,7 @@ export class Dashboard {
   save(beer) {
     beer.save()
       .then((result) => {
-        console.debug('beer save result', result);
+        // console.debug('beer save result', result);
         beer.modified = result.modified;
         this.updateBestBets();
       });
@@ -98,7 +98,7 @@ export class Dashboard {
     _.forEach(this.beers, (beer) => {
       beer.bestBet = beer.status === 'good' && beer.type && this.isRecent(beer.modified);
     });
-    console.debug(this.beers);
+    // console.debug(this.beers);
   }
 
   getBestBets() {
