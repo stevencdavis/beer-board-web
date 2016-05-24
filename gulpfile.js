@@ -79,7 +79,7 @@ global.paths = {
     //   'base':    'img/iconic'
     // },
     {
-      'package': 'fontawesome'//,
+      'package': 'fontawesome',
       'src':     'fonts/**/fontawesome-*',
       'base':    'fonts/fontawesome'
     }
